@@ -10,14 +10,28 @@ Pick other seats randomly when they find their seat occupied
 What is the probability that the n-th person can get his own seat?
  */
 
+/*
+n=3
+
+1/3
+1/3 * 1/2
+
+n=4
+1/4
+1/4*
+
+
+ */
+
 public class L1227 {
 
     public static void main(String[] args) {
 
-
+        double res = nthPersonGetsNthSeat(3);
+        System.out.println(res);
     }
 
     public static double nthPersonGetsNthSeat(int n) {
-        return 0.0;
+        return n==1?1:0.5;
     }
 }
