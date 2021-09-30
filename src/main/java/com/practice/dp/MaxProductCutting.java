@@ -5,13 +5,13 @@ import java.util.List;
 
 public class MaxProductCutting {
 
-    static int L = 17;
-    static int C = 2;
+    static int L = 10;
+    static int C = 3;
 
     public static void main(String[] args) {
         int res = solbyRec(L, C, "");
         System.out.println(res);
-       // solByDP();
+        // solByDP();
     }
 
 //    private static void solByDP() {
@@ -54,13 +54,13 @@ public class MaxProductCutting {
 
     private static int solbyRec(int len, int cuts, String str) {
 
-        if (cuts == 0) {
-            if (len > 0) {
-             //   System.out.println(str + len);
-                return len;
-            }
-        }
-        if (len == 0) return 0;
+//        if (cuts == 0) {
+//            if (len > 0) {
+//                System.out.println(str + len);
+//                return len;
+//            }
+//        }
+        if (len <= 0) return 0;
 
         int maxProduct = 1;
 
@@ -74,12 +74,12 @@ public class MaxProductCutting {
 
     private static int solbyBottomUP(int len, int cuts, String str) {
 
-//        if (cuts == 0) {
-//            if (len > 0) {
-//                System.out.println(str + len);
-//                return len;
-//            }
-//        }
+        if (cuts == 0) {
+            if (len > 0) {
+                System.out.println(str + len);
+                return len;
+            }
+        }
         if (len == 0) return 0;
 
         int maxProduct = 1;
