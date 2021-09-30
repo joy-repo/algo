@@ -11,8 +11,8 @@ public class DiceThrow {
     static int lookUp[][] = new int[num][sum];
 
     public static void main(String[] args) {
-        //int res = solByrec(0, 0, "");
-        int res = bottomUpDP(0, 0, "");
+        int res = solByrec(0, 0, "");
+       // int res = bottomUpDP(0, 0, "");
         System.out.println(res);
         for (int i = 0; i < lookUp.length; i++)
             System.out.println(Arrays.toString(lookUp[i]));
@@ -33,7 +33,7 @@ public class DiceThrow {
         if (lookUp[c][s] == 0) {
 
             for (int i = 1; i <= faces; i++) {
-                count = count + bottomUpDP(c + 1, s + i, res + "," + i);
+                count = count + bottomUpDP(c + 1, s + i, res + i+",");
             }
             lookUp[c][s] = count;
         }
@@ -54,7 +54,7 @@ public class DiceThrow {
         int count = 0;
 
         for (int i = 1; i <= faces; i++) {
-            count = count + solByrec(c + 1, s + i, res + "," + i);
+            count = count + solByrec(c + 1, s + i, res + i+",");
         }
         return count;
     }
