@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class CoinChange {
 
     static int coins[] = {1, 3, 5, 7};
-    static int T = 8;
+    static int T = 23;
 
     public static void main(String[] args) {
         //int res = solByRec_PERMUTE(0, "");
@@ -48,15 +48,15 @@ public class CoinChange {
     private static void solByDP(){
 
         int DP[][] = new int[coins.length+1][T+1];
-        for(int i=0;i<coins.length+1;i++)
-            DP[i][0]=1;
+//        for(int i=0;i<coins.length+1;i++)
+//            DP[i][0]=1;
 
         for(int j=1 ;j<=coins.length;j++){
-            for(int i =1; i<=T;i++){
+            for(int i =0; i<=T;i++){
                 if(coins[j-1]>i){
                     DP[j][i]=DP[j-1][i];
-//                } else if(coins[j-1]==i){
-//                    DP[j][i]=DP[j-1][i]+1;
+                } else if(coins[j-1]==i){
+                    DP[j][i]=DP[j-1][i]+1;
                 }else{
                     DP[j][i]=DP[j-1][i]+DP[j][i-coins[j-1]];
                 }
