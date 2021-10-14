@@ -48,8 +48,6 @@ public class LexicographicallyNextPermutation {
         arrChar[i]=val;
         return arrChar;
 
-
-
     }
 
     private static char[] createArr(char[] arrChar, int store, char val, int i) {
