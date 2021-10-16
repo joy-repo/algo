@@ -7,7 +7,7 @@ import java.util.List;
 public class LIS {
 
     // static int[] ARR = {23,10,22,5,33,8,9,21,50,41,60,80,99, 22,23,24,25,26,27};
-    static int[] ARR = {1, 2,0, 3,8};
+    static int[] ARR = {1, 2, 0, 3, 8};
 
     public static void main(String[] args) {
         System.out.println(sol_RECC(0, Integer.MIN_VALUE));
@@ -15,23 +15,23 @@ public class LIS {
         System.out.println(res);
         sol_DP();
 
-      //  printAllLIS_Recc(0, Integer.MIN_VALUE, "");
+        printAllLIS_Recc(0, Integer.MIN_VALUE, "");
 
     }
 
     private static void sol_DP() {
-        int[] DP= new int[ARR.length];
-        Arrays.fill(DP,1);
+        int[] DP = new int[ARR.length];
+        Arrays.fill(DP, 1);
         int[] tracker = new int[ARR.length];
-        Arrays.fill(tracker,-1);
+        Arrays.fill(tracker, -1);
 
 
-        for(int j=1; j< ARR.length; j++){
-            for(int i=0; i<j; i++){
-                if(ARR[i]<ARR[j]) {
-                    if(DP[j]<DP[i]+1){
-                        DP[j]=DP[i]+1;
-                        tracker[j]=i;
+        for (int j = 1; j < ARR.length; j++) {
+            for (int i = 0; i < j; i++) {
+                if (ARR[i] < ARR[j]) {
+                    if (DP[j] < DP[i] + 1) {
+                        DP[j] = DP[i] + 1;
+                        tracker[j] = i;
                     }
                 }
             }
@@ -43,14 +43,14 @@ public class LIS {
 
     private static void printAllLIS_Recc(int i, int val, String res) {
 
-        if (i == ARR.length-1) System.out.println(res);
+        if (i == ARR.length - 1) System.out.println(res);
 
         for (int n = i + 1; n < ARR.length; n++) {
-            if (val < ARR[n]) {
+            if (val < ARR[n])
                 printAllLIS_Recc(n, ARR[n], res + "," + val);
-            } else {
+            else
                 printAllLIS_Recc(n, val, res);
-            }
+
         }
     }
 
@@ -67,7 +67,7 @@ public class LIS {
 
             if (val < ARR[n]) {
                 List<Integer> llT = sol_RECC_Return(n, ARR[n]);
-                if(val !=Integer.MIN_VALUE) llT.add(val);
+                if (val != Integer.MIN_VALUE) llT.add(val);
                 if (res.size() < llT.size())
                     res = llT;
 
@@ -77,7 +77,7 @@ public class LIS {
                     res = llT1;
             }
         }
-       // res.add(val);
+        // res.add(val);
         return res;
 
     }

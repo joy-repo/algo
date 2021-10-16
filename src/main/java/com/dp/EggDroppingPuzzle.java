@@ -1,4 +1,4 @@
-package com.practice.dp;
+package com.dp;
 
 public class EggDroppingPuzzle {
 

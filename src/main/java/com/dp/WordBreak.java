@@ -1,4 +1,4 @@
-package com.practice.dp;
+package com.dp;
 
 import java.util.Arrays;
 import java.util.HashSet;
