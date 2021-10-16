@@ -15,8 +15,8 @@ public class SubArrayWithSum0 {
     public static void main(String[] args) {
 
         checkIfSumExistsOnlyIfSumIs0();
-        checkIfSumExists();
-        printAllSubArraysWithSum();
+       // checkIfSumExists();
+       // printAllSubArraysWithSum();
 
     }
 
