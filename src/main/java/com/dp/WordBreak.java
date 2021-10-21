@@ -7,11 +7,11 @@ import java.util.Set;
 public class WordBreak {
 
     public static String temp_dictionary[] = {"mobile", "samsung", "sam", "sung",
-            "man", "mango", "icecream", "and",
+            "man", "mango", "icecream", "and", "a", "am", "ace",
             "go", "i", "like", "ice", "cream"};
     public static Set<String> DICTIONARY = new HashSet<>();
 
-    public static String WORD = "ilikesamsung";
+    public static String WORD = "iamace";
 
     public static void main(String[] args) {
         DICTIONARY = new HashSet<String>(Arrays.asList(temp_dictionary));
