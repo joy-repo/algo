@@ -12,7 +12,7 @@ The strings are the same, so return true.
 
 import java.util.Arrays;
 
-public class L1162 {
+public class Leet1162 {
 
     public static void main(String[] args) {
 

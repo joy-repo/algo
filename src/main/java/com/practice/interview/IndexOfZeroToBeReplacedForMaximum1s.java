@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.interview;
 
 public class IndexOfZeroToBeReplacedForMaximum1s {
 

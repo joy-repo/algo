@@ -23,7 +23,7 @@ n=4
 
  */
 
-public class L1227 {
+public class Leet1227 {
 
     public static void main(String[] args) {
 
