@@ -11,20 +11,23 @@ public class TT {
         List<Integer> lt = new ArrayList<>(new HashSet<>(ll));
 
       //  Arrays.copyOfRange()
+        List<String> llj = new LinkedList<>();
 
-        Set<String> ss = new HashSet<>();
-        Set<String> s1 = new HashSet<>();
-        String str = "lll";
-        char[] cArr = str.toCharArray();
-       // List<Character> hh = Arrays.stream(cArr)
+        System.out.println(  Arrays.toString("ui uiu".split(" ")));
 
-       // Set<Character> puzzleSet = new HashSet<Character>(hh);
-       int[]  nums1={1,3,5};
-        int sum1 = Arrays.stream(nums1).sum();
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a,b)->(b-a));
-        //int r  =minHeap.offer(8)-1;
-        System.out.println(minHeap.peek());
-        System.out.println(minHeap.poll());
+//        Set<String> ss = new HashSet<>();
+//        Set<String> s1 = new HashSet<>();
+//        String str = "lll";
+//        char[] cArr = str.toCharArray();
+//       // List<Character> hh = Arrays.stream(cArr)
+//
+//       // Set<Character> puzzleSet = new HashSet<Character>(hh);
+//       int[]  nums1={1,3,5};
+//        int sum1 = Arrays.stream(nums1).sum();
+//        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a,b)->(b-a));
+//        //int r  =minHeap.offer(8)-1;
+//        System.out.println(minHeap.peek());
+//        System.out.println(minHeap.poll());
 
     }
 
