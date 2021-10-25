@@ -2,12 +2,12 @@ package com.arrays;
 
 public class CombinationPermutation {
 
-    static int[] arr = {1, 2, 3, 4, 5};
+    static int[] arr = {1, 2, 2};
     static int K = 3;
 
     public static void main(String[] args) {
-        //   combNonRepetition(0, "");
-        //    combRepetition( 0, "");
+           combNonRepetition(0, "");
+         //   combRepetition( 0, "");
         int[] store = {0, 0, 0, 0,0};
         int[] numEle = {1, 1, 1, 1,1};
         //  permutaionNonRepetition("", store, numEle);
@@ -50,7 +50,7 @@ public class CombinationPermutation {
 
 //        if (j > arr.length)
 //            return;
-
+        //System.out.println(s);
         if (s.length() == K) {
             System.out.println(s);
             return;

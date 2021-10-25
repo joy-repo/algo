@@ -1,5 +1,15 @@
 package com.test;
 
+
+/*
+https://leetcode.com/problems/permutations/
+https://leetcode.com/problems/permutations-ii/
+https://leetcode.com/problems/next-permutation/
+https://leetcode.com/problems/subsets/
+https://leetcode.com/problems/subsets-ii/
+
+ */
+
 public class Test {
 
     public static void main(String[] args) {
