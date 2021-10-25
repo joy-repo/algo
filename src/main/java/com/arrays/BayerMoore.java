@@ -41,4 +41,12 @@ public class BayerMoore {
 
 		System.out.println("Majority element is " + majorityElement(arr));
 	}
+
+//	class Container extends Comparable<Container> {
+//
+//		@Override
+//		public int compareTo(Container o) {
+//			return 0;
+//		}
+//	}
 }
