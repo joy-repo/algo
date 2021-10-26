@@ -8,6 +8,8 @@ public class TT {
 
         List<Integer> ll = new ArrayList<>();
 
+        ll.stream().mapToInt(i->i).sum();
+
         List<Integer> lt = new ArrayList<>(new HashSet<>(ll));
 
 
