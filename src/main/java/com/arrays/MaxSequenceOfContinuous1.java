@@ -4,7 +4,7 @@ package com.arrays;
 
 public class MaxSequenceOfContinuous1 {
 
-    public static int[] arr = {1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1,1};
+    public static int[] arr = {1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1};
     public static int K = 2;
 
     public static void main(String[] args) {

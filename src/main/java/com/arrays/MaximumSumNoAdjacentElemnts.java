@@ -10,10 +10,10 @@ public class MaximumSumNoAdjacentElemnts {
 
     public static void main(String[] args) {
         sol();
-        int res = sol_rec(0,0);
+        int res = sol_rec(0, 0);
         System.out.println(res);
         System.out.println();
-     //    sol_rec_1(0, 0);
+        //    sol_rec_1(0, 0);
     }
 
 //    private static void sol_rec_1(int i, int sum) {

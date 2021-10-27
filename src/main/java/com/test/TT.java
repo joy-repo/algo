@@ -11,7 +11,8 @@ public class TT {
         ll.stream().mapToInt(i->i).sum();
 
         List<Integer> lt = new ArrayList<>(new HashSet<>(ll));
-
+        Double f = new Double((3*1.0)/4);
+        System.out.println(f);
 
       //  Arrays.copyOfRange()
         List<String> llj = new LinkedList<>();

@@ -6,10 +6,10 @@ public class CombinationPermutation {
     static int K = 3;
 
     public static void main(String[] args) {
-           combNonRepetition(0, "");
-         //   combRepetition( 0, "");
-        int[] store = {0, 0, 0, 0,0};
-        int[] numEle = {1, 1, 1, 1,1};
+        combNonRepetition(0, "");
+        //   combRepetition( 0, "");
+        int[] store = {0, 0, 0, 0, 0};
+        int[] numEle = {1, 1, 1, 1, 1};
         //  permutaionNonRepetition("", store, numEle);
 
 

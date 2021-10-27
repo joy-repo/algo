@@ -22,7 +22,7 @@ public class LargestRectangularAreaHistogram {
         int temp = 0;
 
         for (int i = 0; i < hist.length - 1; i++) {
-          int min = hist[i];
+            int min = hist[i];
             for (int j = i + 1; j < hist.length; j++) {
                 min = Math.min(min, hist[j]);
                 temp = Math.max(temp, min * (j - i + 1));

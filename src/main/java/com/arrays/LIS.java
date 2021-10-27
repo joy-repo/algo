@@ -11,7 +11,7 @@ public class LIS {
         System.out.println(arr.length);
         sol();
         sol_DP();
-  //      sol_rec();
+        //      sol_rec();
 
     }
 
@@ -28,13 +28,13 @@ public class LIS {
     private static void sol_DP() {
         int[] DP = new int[arr.length];
         int[] store = new int[arr.length];
-        Arrays.fill(DP,1);
-        Arrays.fill(store,-1);
-        for(int i=1;i<arr.length;i++ ){
-            for(int j=0;j<i;j++){
-                if(arr[i]>arr[j] && DP[i]<DP[j]+1) {
-                    DP[i]=DP[j]+1;
-                    store[i]=j;
+        Arrays.fill(DP, 1);
+        Arrays.fill(store, -1);
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (arr[i] > arr[j] && DP[i] < DP[j] + 1) {
+                    DP[i] = DP[j] + 1;
+                    store[i] = j;
                 }
             }
         }

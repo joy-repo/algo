@@ -30,11 +30,11 @@ public class DuplicateElementLimiTedRangeArray {
         System.out.println("\nThe repeating elements are : ");
 
         for (i = 0; i < size; i++) {
-            int j = arr[i]<0 ? arr[i]+100000: arr[i];
+            int j = arr[i] < 0 ? arr[i] + 100000 : arr[i];
             if (arr[i] < -10)
                 System.out.print(i + " ");
             else
-                arr[j] = -100000 +arr[j];
+                arr[j] = -100000 + arr[j];
         }
     }
 

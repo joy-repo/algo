@@ -15,10 +15,10 @@ public class LongestBitonicSubArray {
         int inrLen = 0;
         int dcrLen = 0;
         int maxLen = 0;
-        int start =0;
-        int end=0;
-        int maxStart=0;
-        int maxEnd=0;
+        int start = 0;
+        int end = 0;
+        int maxStart = 0;
+        int maxEnd = 0;
         if (Arr[0] < Arr[1]) {
             increasing = true;
             inrLen = 1;
@@ -33,35 +33,35 @@ public class LongestBitonicSubArray {
                 inrLen++;
 
 
-            if(prev > Arr[i] && decreasing)
+            if (prev > Arr[i] && decreasing)
                 dcrLen++;
 
-            if(prev > Arr[i] && increasing){
-                decreasing=true;
-                increasing=false;
-                dcrLen=1;
+            if (prev > Arr[i] && increasing) {
+                decreasing = true;
+                increasing = false;
+                dcrLen = 1;
             }
 
-            if(prev < Arr[i] && decreasing){
-                if(inrLen+dcrLen >maxLen){
-                    maxLen=inrLen+dcrLen;
-                    maxStart=start;
-                    maxEnd=i-1;
+            if (prev < Arr[i] && decreasing) {
+                if (inrLen + dcrLen > maxLen) {
+                    maxLen = inrLen + dcrLen;
+                    maxStart = start;
+                    maxEnd = i - 1;
                 }
-                inrLen=2;
-                dcrLen=0;
-                decreasing=false;
-                increasing=true;
-                start=i-1;
+                inrLen = 2;
+                dcrLen = 0;
+                decreasing = false;
+                increasing = true;
+                start = i - 1;
             }
 
-            prev=Arr[i];
+            prev = Arr[i];
         }
 
-        if(inrLen+dcrLen >maxLen){
-            maxLen=inrLen+dcrLen;
-            maxStart=start;
-            maxEnd=Arr.length-1;
+        if (inrLen + dcrLen > maxLen) {
+            maxLen = inrLen + dcrLen;
+            maxStart = start;
+            maxEnd = Arr.length - 1;
         }
         System.out.println(maxLen);
 
