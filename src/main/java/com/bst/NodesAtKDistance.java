@@ -25,11 +25,11 @@ public class NodesAtKDistance {
         } else {
             int L = dfs(node.left), R = dfs(node.right);
             if (L != -1) {
-                if (L == K) ans.add(node.data);
+                if (L == K) {ans.add(node.data);}
                 subtree_add(node.right, L + 1);
                 return L + 1;
             } else if (R != -1) {
-                if (R == K) ans.add(node.data);
+                if (R == K){ ans.add(node.data);}
                 subtree_add(node.left, R + 1);
                 return R + 1;
             } else {
@@ -40,9 +40,10 @@ public class NodesAtKDistance {
 
     // Add all nodes 'K - dist' from the node to answer.
     public static  void subtree_add(Node node, int dist) {
-        if (node == null|| dist>K) return;
+
         if (dist == K)
             ans.add(node.data);
+        if (node == null|| dist>K) return;
         else {
             subtree_add(node.left, dist + 1);
             subtree_add(node.right, dist + 1);
