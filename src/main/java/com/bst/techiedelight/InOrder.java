@@ -7,7 +7,7 @@ public class InOrder {
 
     public static void main(String[] args) {
         Node root = BinaryTree.generateBinaryTree();
-        solByRECC(root);
-        SolByITR(root);
+       // solByRECC(root);
+       // SolByITR(root);
     }
 }
