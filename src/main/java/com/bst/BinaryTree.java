@@ -1,23 +1,23 @@
 package com.bst;
 
 
-class Node {
-    public Node right;
-    public Node left;
-    public int data;
-
-    public Node() {
-    }
-
-    public Node(int data) {
-        this.data = data;
-    }
-
-    @Override
-    public String toString() {
-        return "Node{" + data + "}";
-    }
-}
+//class Node {
+//    public Node right;
+//    public Node left;
+//    public int data;
+//
+//    public Node() {
+//    }
+//
+//    public Node(int data) {
+//        this.data = data;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Node{" + data + "}";
+//    }
+//}
 
 public class BinaryTree {
 
