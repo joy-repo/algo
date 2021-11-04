@@ -30,6 +30,18 @@ public class BinaryTree {
 //      3    7           14  17
 //                              21
 
+    public static Node generateBinaryTree1() {
+
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right= new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.right.right = new Node(7);
+        root.right.left= new Node(6);
+        return root;
+    }
+
     public static Node generateBinaryTree() {
 
         Node root = new Node(10);
