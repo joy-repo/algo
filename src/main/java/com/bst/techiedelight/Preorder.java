@@ -8,7 +8,7 @@ import java.util.Stack;
 public class Preorder {
 
     public static void main(String[] args) {
-        Node root = BinaryTree.generateBinaryTree1();
+        Node root = BinaryTree.generateBinaryTree();
         solBYTECC(root);
         System.out.println();
         solByITR(root);
