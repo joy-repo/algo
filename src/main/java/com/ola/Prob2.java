@@ -9,6 +9,7 @@ public class Prob2 {
 
     static String input = "a^b$c";
 
+
     ///
     /// map <INTeger, Chr> --> 1 , ','
 
