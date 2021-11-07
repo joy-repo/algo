@@ -32,6 +32,7 @@ public class PostOrder {
 //            if(stk.peek().right.data==n.data){
 //                System.out.print(stk.pop().data+" ,");
 //            }
+
             while(!stk.isEmpty()){
                 n = stk.peek();
                 if(n.right!=null && prev!=null && prev!=n.right){
