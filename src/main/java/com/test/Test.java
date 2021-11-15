@@ -13,6 +13,10 @@ https://leetcode.com/problems/subsets-ii/
 public class Test {
 
     public static void main(String[] args) {
+
+
+        String[] str = "opop,uiui,uiui".split(",");
+        System.out.println(str);
 //        String ss = "MHYPDEMMXXX-FG12M-A-2022-02-09";
 //
 //        System.out.println(ss.substring(ss.length()-10,ss.length()));
