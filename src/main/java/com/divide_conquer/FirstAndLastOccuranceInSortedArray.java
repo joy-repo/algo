@@ -12,6 +12,7 @@ public class FirstAndLastOccuranceInSortedArray {
         int last =solLast();
         System.out.println(first);
         System.out.println(last);
+
     }
 
     private static int solFirst() {
