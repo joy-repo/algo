@@ -10,11 +10,12 @@ public class PrintPathBetween2Nodes {
 
     public static void main(String[] args) {
 
-         List<Integer> res = path2Nodes(21,2);
+        List<Integer> res = path2Nodes(21, 2);
 //        int res = findLevel(9,ROOT);
         System.out.println("-----------");
-        if(res==null) return;
-        res.stream().forEach(System.out::println);
+        if (res == null) return;
+        //res.stream().forEach(System.out::print);
+        System.out.println(res);
 
     }
 

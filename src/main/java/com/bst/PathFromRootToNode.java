@@ -15,9 +15,30 @@ public class PathFromRootToNode {
 		x.right.right = new Node(25);
 		List<Integer> li = new ArrayList<>();
 		sol(x, 12, li);
-		
+		//sol1(x, 12, li);
 		System.out.println(li);
+		System.out.println(sol1(x, 12, new ArrayList<>()));
 	}
+
+	private static List<Integer> sol1(Node n, int target, List<Integer> li) {
+
+		if (n == null) return null;
+		if (n.data == target) {
+			li.add(n.data);
+			return li;
+		}
+
+		li.add(n.data);
+		List<Integer> res = sol1(n.right, target, li);
+		if (res != null) return res;
+		res = sol1(n.left, target, li);
+		if (res != null) return res;
+		li.remove(li.lastIndexOf(n.data));
+		return null;
+
+
+	}
+
 
 	private static boolean sol(Node n, int i, List<Integer> li) {
 

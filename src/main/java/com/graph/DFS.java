@@ -15,7 +15,7 @@ public class DFS {
         System.out.println("------------");
         //System.out.println();
         Set<Integer> visited = new HashSet<>();
-
+        //visited.add(0);
         dfs_Recc(0,visited);
     }
 
@@ -27,7 +27,7 @@ public class DFS {
         if(edges==null) edges=new HashSet<>();
         for(Edge e : edges){
             if(!visited.contains(e.destV)) {
-                visited.add(e.destV);
+                //visited.add(e.destV);
                 dfs_Recc(e.destV, visited);
             }
         }
