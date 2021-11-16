@@ -3,7 +3,6 @@ package com.dp;
 
 import java.util.Arrays;
 import java.util.HashMap;
-
 import java.util.Map;
 
 public class BoxStacking {
@@ -32,7 +31,7 @@ public class BoxStacking {
 
     public static void main(String[] args) {
         solByRecursion();
-        solByDP();
+      //  solByDP();
     }
 
     private static void solByDP() {
