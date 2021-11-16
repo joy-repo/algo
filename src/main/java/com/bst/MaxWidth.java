@@ -9,7 +9,7 @@ public class MaxWidth {
 //        System.out.println(maxLeft(root));
         System.out.println(maxLeft(root));
         System.out.println(maxRight(root));
-        System.out.println(maxWidth(root));
+       // System.out.println(maxWidth(root));
     }
 
     private static int maxLeft(Node root) {

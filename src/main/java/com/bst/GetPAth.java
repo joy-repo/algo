@@ -25,8 +25,6 @@ public class GetPAth {
         int r = getLevel(root.right, n);
         if(r!=Integer.MIN_VALUE) return r+1;
         int l = getLevel(root.left, n);
-
-
         if(l!=Integer.MIN_VALUE) return  l+1;
         return  Integer.MIN_VALUE;
 

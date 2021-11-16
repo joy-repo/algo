@@ -33,6 +33,22 @@ public class TT {
 //        System.out.println(minHeap.peek());
 //        System.out.println(minHeap.poll());
 
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>((a, b) -> b.compareTo(a));
+        priorityQueue.offer(2);
+        priorityQueue.offer(3);
+        priorityQueue.offer(1);
+        priorityQueue.offer(2);
+
+        priorityQueue.remove(2);
+        for (int i = 0; i < 4; i++) {
+            System.out.println(priorityQueue.poll());
+        }
+
+
+        System.out.println(priorityQueue);
+        priorityQueue.remove(2);
+        System.out.println(priorityQueue);
+
     }
 
     public List<Integer> findNumOfValidWords(String[] words, String[] puzzles) {
