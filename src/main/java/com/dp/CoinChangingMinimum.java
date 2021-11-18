@@ -2,9 +2,9 @@ package com.dp;
 
 import java.util.Arrays;
 
-public class CoinChanging {
+public class CoinChangingMinimum {
 
-	public static int[] arr = { 1, 5, 6, 8 };
+	public static int[] arr = {1, 5, 6, 8};
 	public static int SUM = 11;
 
 	public static int RES = Integer.MAX_VALUE;
@@ -39,7 +39,7 @@ public class CoinChanging {
 				if (arr[c - 1] > r)
 					DP[c][r] = DP[c - 1][r];
 				else
-					DP[c][r] = getVal(DP[c - 1][r], DP[c][r - arr[c - 1]] + 1);
+					DP[c][r] = Math.min(DP[c - 1][r], DP[c][r - arr[c - 1]] + 1);
 
 			}
 		}

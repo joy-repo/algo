@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CoinChange {
 
-    static int coins[] = {1, 3, 5, 7};
+    static int coins[] = {3, 5, 7};
     static int T = 23;
 
     public static void main(String[] args) {

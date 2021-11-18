@@ -23,7 +23,7 @@ public class WordBreak {
         String[] DP = new String[WORD.length() + 1];
 
 
-        DP[0] = " ";
+        DP[0] = null;
         DP[1] = "i";
 
         for (int i = 1; i < WORD.length(); i++) {
