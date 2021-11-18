@@ -23,15 +23,15 @@ public class WordBreak {
         String[] DP = new String[WORD.length() + 1];
 
 
-        DP[0] = null;
-        DP[1] = "i";
+        DP[0] = "";
+        // DP[1] = "i";
 
-        for (int i = 1; i < WORD.length(); i++) {
-            DP[i + 1] = null;
+        for (int i = 1; i <= WORD.length(); i++) {
+            // DP[i + 1] = null;
             for (int j = 0; j <= i; j++) {
-                String tmpStr = WORD.substring(j, i + 1);
+                String tmpStr = WORD.substring(j, i);
                 if (DICTIONARY.contains(tmpStr) && DP[j] != null) {
-                    DP[i + 1] = DP[j] + " " + tmpStr;
+                    DP[i] = DP[j] + " " + tmpStr;
                     break;
                 }
             }
