@@ -11,12 +11,13 @@ public class WordBreak {
             "go", "i", "like", "ice", "cream"};
     public static Set<String> DICTIONARY = new HashSet<>();
 
-    public static String WORD = "iamace";
+    public static String WORD = "iamasamsung";
 
     public static void main(String[] args) {
         DICTIONARY = new HashSet<String>(Arrays.asList(temp_dictionary));
         solByRec(0, "");
         solByDP();
+        solByDP1();
     }
 
     private static void solByDP() {
@@ -28,7 +29,7 @@ public class WordBreak {
 
         for (int i = 1; i <= WORD.length(); i++) {
             // DP[i + 1] = null;
-            for (int j = 0; j <= i; j++) {
+            for (int j = 0; j < i; j++) {
                 String tmpStr = WORD.substring(j, i);
                 if (DICTIONARY.contains(tmpStr) && DP[j] != null) {
                     DP[i] = DP[j] + " " + tmpStr;
@@ -38,6 +39,24 @@ public class WordBreak {
         }
         System.out.println(Arrays.toString(DP));
 
+    }
+
+    private static void solByDP1() {
+        Boolean[] DP = new Boolean[WORD.length() + 1];
+
+
+        DP[0] = true;
+        // DP[1] = "i";
+
+        for (int i = 1; i <= WORD.length(); i++) {
+            // DP[i + 1] = null;
+            for (int j = 0; j < i; j++) {
+                String tmpStr = WORD.substring(j, i);
+                DP[i] = DICTIONARY.contains(tmpStr) && DP[j];
+                if (DP[i]) break;
+            }
+        }
+        System.out.println(Arrays.toString(DP));
     }
 
 
