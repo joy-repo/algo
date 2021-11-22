@@ -20,9 +20,8 @@ public class MyBlockingQueue {
             wait();
         }
         this.queue.add(item);
-        if (this.queue.size() == 1) {
-            notifyAll();
-        }
+        notifyAll();
+
     }
 
 
@@ -31,11 +30,9 @@ public class MyBlockingQueue {
         while (this.queue.size() == 0) {
             wait();
         }
-        if (this.queue.size() == this.limit) {
-            notifyAll();
-        }
-
-        return this.queue.remove(0);
+        Object o = this.queue.remove(0);
+        notifyAll();
+        return o;
     }
 
 }
