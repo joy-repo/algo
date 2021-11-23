@@ -30,13 +30,13 @@ Backlog-basics:
 14. s_ood
 15. Object Oriented design
 16. java EE design Pattern
-17. m--------------------------------------------------------
+17. --------------------------------------------------------
 18. SPRING --> SPRING 5 recipes- Basics
 19. SPRING --> SPRING 5 recipes- Database
 20. SPRING --> SPRING 5 recipes- Transactions
-21. m--------------------------------------------------------
+21. --------------------------------------------------------
 22. HIBERNET---> hibernet in action - revise
-23. m--------------------------------------------------------
+23. --------------------------------------------------------
 24. Greg Young -> videos
 25. Microservice Patterns -> Chris Richardson
 26. Microservice in Action
@@ -54,15 +54,15 @@ Backlog-basics:
 38. Mongo ---- Pluralsight/Internet
 39. Mongo Patterns -- Book revise
 40. Cassandra Design Pattern -- Book
-41. m--------------------------------------------------------
+41. --------------------------------------------------------
 42. KAFKA- Confluent book revise
 43. KAFKA- Kafka streams in Action
 44. Kafka patterns
-45. m--------------------------------------------------------
+45. --------------------------------------------------------
 46. Elastic Search Usecases/Patterns
 47. Redis --> Quick video - Pluralsight
 48. Redis vs memcache vs hazlecast--- internals
-49. m--------------------------------------------------------
+49. --------------------------------------------------------
 
 Projects :
 
