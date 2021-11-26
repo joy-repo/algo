@@ -60,10 +60,10 @@ class Passenger implements Runnable {
 
             int await = barrier.await();
             System.out.println(name + " ::await:<" + await + ">");
-            if (await == 0) {
+            //if (await == 0) {
 
                 System.out.println(name + " :: Four passengers have arrived so cab is going to start.." + await);
-            }
+            //}
         } catch (InterruptedException | BrokenBarrierException e) {
             e.printStackTrace();
         }

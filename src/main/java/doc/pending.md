@@ -6,11 +6,13 @@ Pendings-
 
 1. Atomics
 2. Reentrant-Lock
-3. Producer-Consumer using Threads
-4. OddEven Problem
-5. Jenkov - http://tutorials.jenkov.com/java-concurrency/blocking-queues.html
-6. jenkov - http://tutorials.jenkov.com/java-util-concurrent/priorityblockingqueue.html
-7. Watch - System Design - Netflix
+3. readWrite Reentrant
+4. Producer-Consumer using Threads
+5. Fork-Join pool
+6. OddEven Problem
+7. Jenkov - http://tutorials.jenkov.com/java-concurrency/blocking-queues.html
+8. jenkov - http://tutorials.jenkov.com/java-util-concurrent/priorityblockingqueue.html
+9. Watch - System Design - Netflix
 
 Backlog-basics:
 
