@@ -2,7 +2,7 @@ package com.ola;
 
 public class Prob1 {
 
-    static String INPUT = "@!AaAaAabbcdd1#ee$%";
+    static String INPUT = "@!AaA$aAabbcdd1#ee$%";
     ///output --> a6b3c2g1
 
     //'A' <ch < 'Z' ||
@@ -20,18 +20,18 @@ public class Prob1 {
         String res = "";
         while (i < charrArr.length) {
 
-            System.out.println(i);
+            //System.out.println(i);
+            //Character.isAlphabetic(charrArr[i])
 
-
-            if (('A' <= charrArr[i] && 'Z' >= charrArr[i]) || ('a' <= charrArr[i] && 'z' >= charrArr[i])) {
+            if (Character.isAlphabetic(charrArr[i])) {
                 res = res + charrArr[i];
                 int rep = 1;
 
-                while (i < charrArr.length - 1 && (charrArr[i] + "").equalsIgnoreCase(charrArr[i + 1] + "")) {
+                while (Character.toUpperCase(charrArr[i]) == Character.toUpperCase(charrArr[i + 1])) {
 
                     rep++;
                     i++;
-                    System.out.println(i);
+                    //  System.out.println(i);
                 }
                 res = res + rep;
                 i++;
