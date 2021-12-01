@@ -2,6 +2,18 @@ Pendings-
 
 1. G1 GC documentation
 
+Plan:
+
+1. DDD - DDD fundamentals - pluralsight
+2. DDD - DDD in practice - pluralsight
+3. Microservices - AXON - https://www.udemy.com/course/spring-boot-microservices-cqrs-saga-axon-framework/
+4. Microservices - EVENT DRIVEN - KAFKA - https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud/
+5. Microservices REST - https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud/
+6. KAFKA - definitive guide (optional)
+7. KAFKA - streams in action
+8.
+9.
+
 23-11-2021:
 
 1. Atomics
