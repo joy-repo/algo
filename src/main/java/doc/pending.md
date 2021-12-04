@@ -2,7 +2,7 @@ Pendings-
 
 1. G1 GC documentation
 
-Plan:
+Plan: 
 
 1. Istio -> https://www.youtube.com/watch?v=T1Kwh3SRAXQ
 
