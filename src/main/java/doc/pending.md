@@ -4,6 +4,8 @@ Pendings-
 
 Plan:
 
+1. Istio -> https://www.youtube.com/watch?v=T1Kwh3SRAXQ
+
 1. DDD - DDD fundamentals - pluralsight
 2. DDD - DDD in practice - pluralsight
 3. Microservices - AXON - https://www.udemy.com/course/spring-boot-microservices-cqrs-saga-axon-framework/
