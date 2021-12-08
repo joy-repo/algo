@@ -14,6 +14,11 @@ public class Test {
 
     public static void main(String[] args) {
 
+       String yyu =  "ID_CARD_UPLOAD_FOLDER"+"//"+"899898";
+       System.out.println(yyu);
+
+
+
 
         String[] str = "opop,uiui,uiui".split(",");
         System.out.println(str);
