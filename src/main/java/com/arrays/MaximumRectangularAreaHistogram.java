@@ -13,6 +13,13 @@ public class MaximumRectangularAreaHistogram {
 
         sol();
 
+
+        MaximumRectangularAreaHistogram mh = new MaximumRectangularAreaHistogram();
+        int input[] = {2, 1, 2, 3, 1};
+        int maxArea = mh.maxHistogram(input);
+        System.out.println(maxArea);
+        assert maxArea == 12;
+
     }
 
     private static void sol() {
@@ -23,9 +30,10 @@ public class MaximumRectangularAreaHistogram {
         int res = 0;
         int i = 1;
 
-        for (i = 1; i < ARR.length; i++) {
-            if (ARR[i] >= ARR[stk.peek()]) {
+        for (i = 1; i < ARR.length; ) {
+            if (stk.isEmpty() || ARR[i] >= ARR[stk.peek()]) {
                 stk.push(ARR[i]);
+                i++;
             } else {
                 int top = stk.pop();
                 if (stk.isEmpty()) {
@@ -47,6 +55,8 @@ public class MaximumRectangularAreaHistogram {
             }
             res = Math.max(res, area);
         }
+
+        System.out.println(res);
 
     }
 
