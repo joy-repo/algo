@@ -28,7 +28,13 @@ public class CallCenter {
 
     private void startCallConsumer() {
         ExecutorService es = Executors.newSingleThreadExecutor();
-        es.submit(()->callHandler.handleCall());
+        es.submit(()-> {
+            try {
+                callHandler.handleCall();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 

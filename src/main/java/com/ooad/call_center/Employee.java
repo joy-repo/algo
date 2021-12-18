@@ -27,7 +27,7 @@ public abstract class Employee {
         }
         //simulate 1 in 5 needs escalation
         if (new Random().nextInt(10) % 5 == 0) {
-            LEVEL nextLevel = this.level.getNext();
+            LEVEL nextLevel = call.getLevel().getNext();
             if (nextLevel == null) {
                 this.isAvailable = true;
                 call.setStatus(STATUS.COMPLETED);
