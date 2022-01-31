@@ -76,8 +76,19 @@ class Mytask implements Runnable {
 public class ExecutorServiceCustom {
     public static void main(String[] args) {
         MyExecutorService service = MyExecutors.myNewFixedThreadPool(3);
+        ExecutorServiceCustom ex = new ExecutorServiceCustom();
         for (int i = 0; i < 20; i++) {
-            service.submit(new Mytask());
+            service.submit(ex::task);
+           // OR  service.submit(new Mytask());
         }
+    }
+
+    public void task() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("hii" + Thread.currentThread().getName());
     }
 }
