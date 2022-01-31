@@ -27,8 +27,9 @@ class MyThreadPool implements MyExecutorService {
             MyThreadPool.currentCapacity++;
             Thread t = new Thread(new Execution());
             t.start();
+            return;
         }
-        taskQueue.add(r);
+        taskQueue.offer(r);
         //e.executeMyMethod();
     }
 }
