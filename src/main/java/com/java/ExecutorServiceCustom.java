@@ -80,6 +80,7 @@ public class ExecutorServiceCustom {
         ExecutorServiceCustom ex = new ExecutorServiceCustom();
         for (int i = 0; i < 20; i++) {
             service.submit(ex::task);
+          // OR  service.submit(Mytask::new);
            // OR  service.submit(new Mytask());
         }
     }

@@ -13,7 +13,7 @@ Plan:
 5. Microservices REST - https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud/
 6. KAFKA - definitive guide (optional)
 7. KAFKA - streams in action
-8.
+8. OOAD - https://www.linkedin.com/pulse/cracking-he-low-level-design-lld-interview-shashi-bhushan-kumar/
 9.
 
 23-11-2021:
@@ -68,9 +68,12 @@ Backlog-basics:
 36. ---------------------------------------------------------
 37. Bigtable -----white paper
 38. Dynamo DB ----whitepaper
-39. Mongo ---- Pluralsight/Internet
+39. Mongo Basics ---- https://www.youtube.com/playlist?list=PLp50dWW_m40UWFSV6PTgYzciZJIxgHy7Q
+40. Mongo Sharding---- Mongo Documentation, Principles
 40. Mongo Patterns -- Book revise
+---------------------------------------------
 41. Cassandra Design Pattern -- Book
+42. Cassandra Realtime Application - Java Brains Chat Application
 42. --------------------------------------------------------
 43. KAFKA- Confluent book revise
 44. KAFKA- Kafka streams in Action

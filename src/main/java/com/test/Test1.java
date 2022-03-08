@@ -1,5 +1,7 @@
 package com.test;
 
+import java.util.Collection;
+
 public class Test1 {
 
     static int[][] arr = {
@@ -12,6 +14,7 @@ public class Test1 {
     public static void main(String[] args) {
 
         soll();
+       // Collection c ;
     }
 
     private static void soll() {
