@@ -1,5 +1,7 @@
 package com.java;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 
 
@@ -8,6 +10,7 @@ interface MyExecutorService {
 }
 
 class MyThreadPool implements MyExecutorService {
+
     static int capacity;
     static int currentCapacity;
     static LinkedBlockingQueue<Runnable> taskQueue;
