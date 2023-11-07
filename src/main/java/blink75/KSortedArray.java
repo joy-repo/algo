@@ -8,7 +8,11 @@ public class KSortedArray {
    static int K = 4;
 
     public static void main(String[] args) {
-        solInsertionSort();
+        //solInsertionSort();
+        insertionSort(0, arr.length-1);
+        for(int i : arr)
+            System.out.println(i);
+
     }
 
     private static void solInsertionSort() {
