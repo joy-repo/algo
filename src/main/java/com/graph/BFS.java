@@ -4,7 +4,7 @@ import java.util.*;
 
 public class BFS {
 
-    static Graph_AdjList graph = Graph_AdjList.createGraph1();
+    static Graph_AdjList graph = Graph_AdjList.createGraph();
 
     public static void main(String[] args) {
         bfs(0);
@@ -21,9 +21,9 @@ public class BFS {
         while (!queue.isEmpty()){
             Integer vert = queue.poll();
             System.out.print(vert+",");
-            Set<Edge> adjEdges = graph.adjList.get(vert);
+            Set<GraphEdge> adjEdges = graph.adjList.get(vert);
             if(adjEdges==null) continue;
-            for ( Edge e : adjEdges){
+            for ( GraphEdge e : adjEdges){
                 if(!visited.contains(e.destV)){
                     queue.offer(e.destV);
                     visited.add(e.destV);

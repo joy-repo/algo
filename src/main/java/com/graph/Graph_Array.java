@@ -22,13 +22,13 @@ public class Graph_Array {
 			graph[destV][srcV] = val;
 	}
 
-	public List<Edge> getAllEdges() {
+	public List<GraphEdge> getAllEdges() {
 
-		List<Edge> lEdge = new ArrayList<>();
+		List<GraphEdge> lEdge = new ArrayList<>();
 		for (int c = 0; c < graph.length; c++)
 			for (int r = 0; r < graph[0].length; r++)
 				if (graph[c][r] != 0)
-					lEdge.add(new Edge(c, r, graph[c][r]));
+					lEdge.add(new GraphEdge(c, r, graph[c][r]));
 
 		return lEdge;
 

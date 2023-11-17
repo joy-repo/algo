@@ -35,7 +35,7 @@ public class MST {
 
 		Set<Integer> vSet = new HashSet<Integer>();
 		vSet.add(i);
-		List<Edge> edgeList = new ArrayList<>();
+		List<GraphEdge> edgeList = new ArrayList<>();
 
 		for (int v = 0; v < graph.numOfvertices - 1; v++) {
 			edgeList.add(getSmallestEddge(vSet));
@@ -47,7 +47,7 @@ public class MST {
 
 	}
 
-	private static Edge getSmallestEddge(Set<Integer> vSet) {
+	private static GraphEdge getSmallestEddge(Set<Integer> vSet) {
 
 		int vSrc = 0, vDest = 0, val = Integer.MAX_VALUE;
 
@@ -61,20 +61,20 @@ public class MST {
 			}
 		}
 		vSet.add(vDest);
-		return new Edge(vSrc, vDest, val);
+		return new GraphEdge(vSrc, vDest, val);
 
 	}
 
 	private static void kruskalsMST() {
 		ss = new SubSet[graph.numOfvertices];
-		List<Edge> edgeList = graph.getAllEdges();
-		List<Edge> MSTedgeList = new ArrayList<Edge>();
+		List<GraphEdge> edgeList = graph.getAllEdges();
+		List<GraphEdge> MSTedgeList = new ArrayList<GraphEdge>();
 		edgeList.sort((e1, e2) -> e2.val - e1.val);
 
 		for (int v = 0; v < graph.numOfvertices - 1; v++) {
 			int cnt = 0;
 			while (true) {
-				Edge e = edgeList.get(cnt);
+				GraphEdge e = edgeList.get(cnt);
 				if (find(e.srcV) != find(e.destV)) {
 					MSTedgeList.add(e);
 					union(e.srcV, e.destV);

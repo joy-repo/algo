@@ -1,4 +1,4 @@
-package com.graph;
+package blink75.graph;
 
 public class Edge {
 	public int srcV;

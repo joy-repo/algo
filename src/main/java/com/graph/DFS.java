@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class DFS {
 
-    static Graph_AdjList graph = Graph_AdjList.createGraph1();
+    static Graph_AdjList graph = Graph_AdjList.createGraph();
 
     public static void main(String[] args) {
 
@@ -23,9 +23,9 @@ public class DFS {
 
         visited.add(vert);
         System.out.print(vert+",");
-        Set<Edge> edges = graph.adjList.get(vert);
+        Set<GraphEdge> edges = graph.adjList.get(vert);
         if(edges==null) edges=new HashSet<>();
-        for(Edge e : edges){
+        for(GraphEdge e : edges){
             if(!visited.contains(e.destV)) {
                 //visited.add(e.destV);
                 dfs_Recc(e.destV, visited);
@@ -41,13 +41,13 @@ public class DFS {
         visited.add(vSrc);
         stk.push(vSrc);
 
-        visited.add(vSrc);
+       // visited.add(vSrc);
         while (!stk.isEmpty()){
             Integer vert = stk.pop();
             System.out.print(vert+",");
-            Set<Edge> adjEdges = graph.adjList.get(vert);
+            Set<GraphEdge> adjEdges = graph.adjList.get(vert);
             if(adjEdges==null) continue;
-            for ( Edge e : adjEdges){
+            for ( GraphEdge e : adjEdges){
                if(!visited.contains(e.destV)){
                    stk.push(e.destV);
                    visited.add(e.destV);
