@@ -12,6 +12,7 @@ public class RottenOranges {
 
     graph.addOrUpdateEdge(0, 9, 4);
     graph.addOrUpdateEdge(0, 9, 4);
+    return graph;
   }
 
 
