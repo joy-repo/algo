@@ -31,11 +31,7 @@ public class FindSumSbarrays {
 
             prevSum.putIfAbsent(currsum, 0);
             prevSum.put(currsum, prevSum.get(currsum) + 1);
-//			Integer count = prevSum.get(currsum);
-//			if (count == null)
-//				prevSum.put(currsum, 1);
-//			else
-//				prevSum.put(currsum, count + 1);
+
         }
 
         return res;
@@ -43,8 +39,11 @@ public class FindSumSbarrays {
 
     public static void main(String[] args) {
 
-        int arr[] = {10, 2, -2, -20, 10};
-        int sum = -10;
+//        static int[] ARR = { 3, 4, -7, 3, 1, 3, 1, -4, -2, -2 };
+//        static int SUM = 0;
+
+        int arr[] = { 3, 4, -7, 3, 1, 3, 1, -4, -2, -2 };
+        int sum = 0;
         int n = arr.length;
         System.out.println(findSubarraySum(arr, n, sum));
 
