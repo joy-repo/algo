@@ -39,8 +39,9 @@ public class BoundaryTraversal {
     if(i>N) return;
 
 
+    System.out.println("before:" +i);
     print1toN(i+1);
-    System.out.println(i);
+    System.out.println("after:" +i);
   }
 
   private static void solReccRightReverse(Node node) {
@@ -64,6 +65,7 @@ public class BoundaryTraversal {
 
     if(isLeaf(node)) {
       res.add(node);
+      return;
 
     }
 
