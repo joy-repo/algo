@@ -2,6 +2,7 @@
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.function.Predicate;
 
 public class TTTTTTT {
 
@@ -17,6 +18,8 @@ public class TTTTTTT {
     public static void main(String[] args) {
         String sd = System.getenv("DUMMY");
         System.out.println(sd);
+
+        Predicate p;
 
 //        Trie
 
