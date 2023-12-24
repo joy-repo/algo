@@ -13,7 +13,7 @@ public class EntryTerminal {
 
   public ParkingTicket createTicket(ParkingStrategy parkingStrategy, String reigstraionId){
 
-    ParkingSlot parkingSlot = getParkingSlot(parkingStrategy);
+    ParkingSlot parkingSlot = getParkingSlot(parkingStrategy, );
 
     ParkingTicket parkingTicket = ParkingTicket.builder()
         .ticketId(UUID.randomUUID().toString())
@@ -29,7 +29,7 @@ public class EntryTerminal {
   }
 
   private ParkingSlot getParkingSlot(ParkingStrategy parkingStrategy) {
-
+      parkingStrategy.getSlotCalculationStrategy().getParkingSlot();
   }
 
 }
