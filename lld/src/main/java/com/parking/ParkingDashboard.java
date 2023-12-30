@@ -5,10 +5,10 @@ import lombok.Data;
 @Data
 public class ParkingDashboard {
 
-  private int emptySlot;
-  private int slotUnderParking;
+  private int emptySlots;
+  private int slotsUnderParking;
 
-  private int completedSlot;
+  private int occupiedSlots;
 
 
 }

@@ -4,6 +4,6 @@ public class User {
 
   private String name;
 
-  private CarSize carSize;
+  //private CarSize carSize;
 
 }

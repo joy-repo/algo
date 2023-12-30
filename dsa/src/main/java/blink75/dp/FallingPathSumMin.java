@@ -41,6 +41,15 @@ public class FallingPathSumMin {
     System.out.println(res);
 
     System.out.println();
+
+    for (int i = 0; i < DP.length; i++) {
+      System.out.println();
+      for (int j = 0; j < DP[0].length; j++) {
+        System.out.print(DP[i][j] + ",");
+      }
+    }
+
+    System.out.println();
     System.out.println("-------DP------");
 
     sol_DP();
