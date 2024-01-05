@@ -9,7 +9,7 @@ public class RodCut {
 
     public static void main(String[] args) {
         System.out.println(solByRec(0));
-        solByDP();
+      //  solByDP();
     }
 
 
