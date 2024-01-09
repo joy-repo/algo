@@ -33,6 +33,10 @@ public class TotalUniquePaths {
 
     System.out.println(result);
 
+    System.out.println("-------DP------");
+
+    sol_DPPP();
+
   }
 
   private static int solRecc_MEMORIZATION(int r, int c, int[][] DP) {
@@ -77,6 +81,32 @@ public class TotalUniquePaths {
       System.out.println();
       for (int j = 0; j < DP[0].length; j++) {
         System.out.print(DP[i][j] + ",");
+      }
+    }
+  }
+
+  private static void sol_DPPP(){
+
+    int dp[][]= new int[ROW][COL];
+
+//    int r=0;
+//    int c=0;
+
+    dp[0][0]=0;
+    for(int i=0; i<ROW; i++){
+      dp[i][0]=1;
+      dp[0][i]=1;
+    }
+
+    for(int r=1; r<ROW; r++){
+      for(int c=1; c<COL; c++){
+        dp[r][c]=dp[r-1][c]+dp[r][c-1];
+      }
+    }
+    for (int i = 0; i < dp.length; i++) {
+      System.out.println();
+      for (int j = 0; j < dp[0].length; j++) {
+        System.out.print(dp[i][j] + ",");
       }
     }
   }

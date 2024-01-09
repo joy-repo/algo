@@ -84,6 +84,24 @@ public class MinimumSumPathTraingle {
     return dp[r][c];
   }
 
+  private static void sol_DPPP(){
+
+    int dp[][] = new int[ARR.length][ARR.length];
+    dp[0][0]=ARR[0][0];
+
+    for (int r=1; r< ARR.length; r++){
+      for (int c=0; c<=r; c++){
+        if(c>0)
+          dp[r][c] = Math.min(dp[r-1][c-1], dp[r-1][c]) + ARR[r][c];
+        else
+          dp[r][c] =  dp[r-1][c] + ARR[r][c];
+
+
+      }
+    }
+
+  }
+
   private static int solRecc(int r, int c) {
 
     if (c > r )
