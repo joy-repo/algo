@@ -10,12 +10,12 @@ public class SearchRotatedSortedArray {
   }
 
   private static void sol() {
-    int low =0;
-    int high = ARR.length-1;
+    int left =0;
+    int right = ARR.length-1;
 
 
-    while (low<=high){
-      int mid  = (low+high)/2;
+    while (left<=right){
+      int mid  = (left+right)/2;
 
       if(ARR[mid]==N){
         System.out.println("ANS : "+ mid);
@@ -23,10 +23,12 @@ public class SearchRotatedSortedArray {
         return;
       }
 
-      if(ARR[mid]<N && N < high ){
-        low=mid+1;
+      // {7,8,9,1,2,3,4,5,6};
+
+      if(ARR[mid]<N && N < right ){
+        left=mid+1;
       }else {
-        high = mid-1;
+        right = mid-1;
       }
 
     }

@@ -20,6 +20,7 @@ public class UpperBound {
     while (low<=high){
       int  mid = (low+high)/2;
 
+
       if(N < ARR[mid]){
         high = mid-1;
         res = mid;
