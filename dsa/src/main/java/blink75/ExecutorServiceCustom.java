@@ -20,8 +20,7 @@ class MyExecutors {
   // Passing the number of threads that
   // will be in the thread pool
   static MyExecutorService
-  myNewFixedThreadPool(int capacity)
-  {
+  myNewFixedThreadPool(int capacity) {
 
     return new MyThreadPool(capacity);
   }
@@ -44,13 +43,12 @@ class MyThreadPool implements MyExecutorService {
   Execution e;
 
   // Method 1
-  public MyThreadPool(int capacity)
-  {
+  public MyThreadPool(int capacity) {
 
     // Member variables of this class
 
     // this keyword refers to current instance itself
-    this.capacity = capacity;
+    MyThreadPool.capacity = capacity;
     currentCapacity = 0;
 
     // Creating a linked blocking queue which will block
@@ -65,8 +63,7 @@ class MyThreadPool implements MyExecutorService {
 
   // Method 2
   // @Override
-  public void execute(Runnable r)
-  {
+  public void execute(Runnable r) {
 
     // Declaring and adding tasks to
     // blocking queue using add() method
@@ -83,8 +80,7 @@ class MyThreadPool implements MyExecutorService {
 class Execution implements Runnable {
 
   // Method 1 of  this class
-  void executeMyMethod()
-  {
+  void executeMyMethod() {
 
     // At start the current capacity will be 0
     // The another capacity is the number of threads we
@@ -109,8 +105,7 @@ class Execution implements Runnable {
 
   // Method 2 of this class
   // @Override
-  public void run()
-  {
+  public void run() {
 
     // Till it is true
     while (true) {
@@ -136,8 +131,7 @@ class Mytask implements Runnable {
 
   // Method 1 of this class
   // @Override
-  public void run()
-  {
+  public void run() {
 
     // Try block to check for exceptions
     try {
@@ -168,8 +162,7 @@ class Mytask implements Runnable {
 // Main Class
 public class ExecutorServiceCustom {
   // Main driver method
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     // Getting the object of MyExcutorService by using
     //  the factory method myNewFixedThreadPool
 

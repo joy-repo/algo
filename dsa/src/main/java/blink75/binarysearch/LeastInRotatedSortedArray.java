@@ -1,5 +1,8 @@
 package blink75.binarysearch;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LeastInRotatedSortedArray {
 
   public static int[] ARR = {7,8,9,10,12,14, 20, 1,2,3,4,5,6};
@@ -9,6 +12,8 @@ public class LeastInRotatedSortedArray {
   }
 
   private static void sol() {
+
+    Map<Character,Integer> m = new HashMap<>();
 
     int left=0;
     int right = ARR.length-1;
