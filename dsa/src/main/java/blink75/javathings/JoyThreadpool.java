@@ -61,7 +61,8 @@ public class JoyThreadpool {
           }
         }
       } catch (InterruptedException e){
-        throw new RuntimeException(e);
+       // throw new RuntimeException(e);
+        System.out.println("Thread :"+Thread.currentThread().getName() + " interrupted");
       }
     }
 
@@ -114,18 +115,18 @@ public class JoyThreadpool {
     pool.submit(task3);
     pool.submit(task3);
     pool.submit(task3);
-    pool.submit(task3);
-    pool.shutdown();
+    pool.submit(task2);
+    pool.awaitShutdown();
   }
 
-  public void shutdown() {
+  public void awaitShutdown() {
 
     while (true) {
 
       if (totalTask.get() == completedTaskList.size()) {
         System.out.println("All Task Completed");
-        System.out.println("totalTask.get() ;"+ totalTask.get());
-        System.out.println("completedTaskList.size() ;"+ completedTaskList.size());
+        System.out.println("totalTask.get() :"+ totalTask.get());
+        System.out.println("completedTaskList.size() :"+ completedTaskList.size());
 
         threadPool.forEach(th -> {
           System.out.println("interrupt " + th.getName());
