@@ -23,28 +23,7 @@ public class TTTTTTT {
 
     public static void main(String[] args) {
 
-        System.out.println(UUID.randomUUID());
 
-
-
-        String sd = System.getenv("DUMMY");
-
-
-
-        assert sd==null;
-
-        System.out.println(sd);
-
-        Predicate p;
-
-//        Trie
-
-        for( int i =0 ; i<=7; i++) {
-
-            int th = 1000 + (-200 + new Random().nextInt(401));
-
-            System.out.println(th);
-        }
     }
 
 }
