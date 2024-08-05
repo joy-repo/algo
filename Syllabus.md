@@ -134,8 +134,8 @@ https://www.udemy.com/share/101wg23@gHnJqWT7HJtMd-G2SAj4LdArovCc5lRfaHtCWBh8TCmN
 
 # LLD
 
-* grokking LLD
-* Design Pattern
+* grokking LLD - https://github.com/tssovi/grokking-the-object-oriented-design-interview
+* Design Pattern - https://refactoring.guru/design-patterns
 * Use tools to create daigram or classes
 
 # Terraform 
