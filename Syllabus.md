@@ -66,8 +66,8 @@ _theory only_
 
 # Reactive
 
-* Reactor - _udemy_
-* webflux - _udemy_
+* Reactor - https://www.udemy.com/share/104qr83@cCwog79wP4eqDVeZRE2WPSSPjKmLNeUDpZwZb01RyXWmhNRapETpdj_RK7lXA9E=/
+* webflux - https://www.udemy.com/share/1022523@WtFdK-RBW0pAnjXgemOPSeQbDoj2PtCDGzi-OAWNEqvzLxI5sg6LJChlTW8ygB4=/
 * Reactive design patterns
 
 # Cloud
@@ -117,7 +117,9 @@ _theory only_
 * kubeAdm _theory_
 * kubernetes internals - _theory_
 
-# JVM performance twining
+# JVM performance twining 
+
+https://www.udemy.com/share/101wg23@gHnJqWT7HJtMd-G2SAj4LdArovCc5lRfaHtCWBh8TCmNZQz1we5FfWXetWI49iQ=/
 
 # Basics Java
 * Effective Java
@@ -135,6 +137,9 @@ _theory only_
 * grokking LLD
 * Design Pattern
 * Use tools to create daigram or classes
+
+# Terraform 
+https://www.udemy.com/share/1020rO3@kxclHUP0QFP1DVMLnxcHbHsC5ePvL4rwkMFwMDpTvm1hocLA34J1grf08pmNyU0=/
 
 # To Cover
 
