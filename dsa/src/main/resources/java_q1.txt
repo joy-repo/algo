@@ -1,0 +1,84 @@
+
+
+  1. Inheritance - DONE
+
+2. Hashmap internals - Done
+
+3. SOLID
+
+4. Design patterns
+
+5. Concurrent Hashmat internals- https://dzone.com/articles/how-concurrenthashmap-works-internally-in-java
+
+6. Copy-onArraylist internals
+
+7. Producer-consumer using threads
+
+8. Odd-even threads
+
+9. Producer-Consumer linked blocking queue
+
+10. Volatile - DONE
+
+11. Atomics - CAS - DONE
+
+12. Reentrant read-write lock
+
+13. Synchronisation / Dead Lock - resolution
+
+14. Count down latch/ Cyclic barrier
+
+15. Semaphore
+
+16. Exceutor Service internals. - DONE
+
+17. Custom Executor service - DONE
+
+18. ForkJoin pool
+
+19. Types of Iterators
+
+20. Fail-Fast and Fail-Safe
+
+21. Non blocking / nio
+
+22. Streams -> intermediate/ terminal
+
+23. Parallel streams
+
+JVM -> https://www.freecodecamp.org/news/jvm-tutorial-java-virtual-machine-architecture-explained-for-beginners/
+
+Immutability - > https://salithachathuranga94.medium.com/implement-immutable-classes-with-java-df5b5b66ffd9
+
+
+
+GUICE : https://github.com/google/guice/wiki/GettingStarted
+
+
+
+Char -> ____bytes of data
+
+Int -> ____bytes of data
+
+long -> ____bytes of data
+
+shortInt -> ____bytes of data
+
+float -> ____bytes of data
+
+double -> ____bytes of data
+
+
+
+SQL ->
+  1. Indexing -> types
+
+2. B-tree
+
+3. Joins
+
+4. Normal form
+
+5. Spring data JPA
+
+6.
