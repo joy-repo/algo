@@ -1,12 +1,9 @@
 package com.striver79.linkedlist;
 
-
-import com.striver79.arrays_hashing.NextPermutation;
-
-public class MiddleElement {
-
+public class DetectALoop {
 
     public static void main(String[] args) {
+
         SLNode root = new SLNode(1);
         root.next = new SLNode(2);
         root.next.next = new SLNode(3);
@@ -15,27 +12,24 @@ public class MiddleElement {
         root.next.next.next.next.next = new SLNode(6);
         root.next.next.next.next.next.next = new SLNode(7);
         root.next.next.next.next.next.next.next = new SLNode(8);
-        findMiddle(root);
+        root.next.next.next.next.next.next.next.next = root.next.next.next.next;
+        System.out.println(findCycle(root));
+
     }
 
-    private static void findMiddle(SLNode root) {
+    private static boolean findCycle(SLNode root) {
+
 
         SLNode slow = root;
         SLNode fast = root;
-        //Node prev =root;
-
-        while(fast.next!=null && fast.next.next!=null){
-           // prev = slow;
+        do{
             slow=slow.next;
-            fast =fast.next.next;
+            fast=fast.next.next;
         }
-
-        if(fast.next==null) System.out.println(slow.data);
-        else System.out.println("slow.data:" + slow.data + " prev : "+ slow.next.data);
-
+        while(fast!=null && slow.data != fast.data);
+        if(fast==null) return false;
+        return true;
     }
-
-
 }
 
 
