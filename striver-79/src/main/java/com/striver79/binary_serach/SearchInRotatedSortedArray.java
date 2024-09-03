@@ -16,8 +16,6 @@ public class SearchInRotatedSortedArray {
         int left = 0;
         int right = ARR.length-1;
 
-
-
         while(left<right){
 
             int mid = (left+right)/2;
