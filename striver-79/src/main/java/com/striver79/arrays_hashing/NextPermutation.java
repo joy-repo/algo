@@ -17,8 +17,6 @@ public class NextPermutation {
 
     private static void sol1() {
 
-        int max = 0;
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
         int i = arr.length-2;
 

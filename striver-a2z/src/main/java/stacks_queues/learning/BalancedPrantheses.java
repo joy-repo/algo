@@ -1,12 +1,19 @@
 package stacks_queues.learning;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class BalancedPrantheses {
 
     static String STRING="()[{}()]";
 
     public static void main(String[] args) {
+
+        List<Integer> ll =new ArrayList<>();
+
         System.out.println(solve());
     }
 
