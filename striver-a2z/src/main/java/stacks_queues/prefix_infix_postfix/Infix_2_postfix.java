@@ -3,6 +3,11 @@ package stacks_queues.prefix_infix_postfix;
 import java.util.Stack;
 
 public class Infix_2_postfix {
+    //TODO: isOperand ---> ans=ans+c
+    //TODO: c=='(' ----> stk.push(c)
+    //TODO: c==')' ----> stk pop till ')'
+    //TODO: else ----> pop and add it to ans if precedence(stk.peek())>=precedence(c)
+    //TODO: pop out the remaining and add it to ans
 
     static String INFIX_STR = "a+b*(c^d-e)";
     //static String INFIX_STR = "a+b*d";
@@ -40,7 +45,7 @@ public class Infix_2_postfix {
                 }
                 stk.pop();
             } else {
-                while(!stk.isEmpty() && precedence(stk.peek())>=precedence(c)){
+                while(!stk.isEmpty() && precedence(stk.peek())>=precedence(c)){ ///TODO: PREFIX and POSTFIX
                     ans=ans+stk.pop();
                 }
                 stk.push(c);
