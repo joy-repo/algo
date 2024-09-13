@@ -22,10 +22,8 @@ public class NGE {
                 while (!stk.isEmpty() && stk.peek()<= ARR[i]){
                     stk.pop();
                 }
-                if(stk.isEmpty()) res[i] = -1;
-                else res[i] = stk.peek();
+                res[i] = stk.isEmpty() ?-1:stk.peek();
                 stk.push(ARR[i]);
-
             }
 
         System.out.println(res);
