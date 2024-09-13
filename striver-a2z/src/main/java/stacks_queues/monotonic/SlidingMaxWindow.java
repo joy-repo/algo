@@ -7,7 +7,11 @@ import java.util.List;
 
 public class SlidingMaxWindow {
 
+    /// TODO : https://takeuforward.org/data-structure/sliding-window-maximum/
+
+
     static int[] ARR = {1,3,-1,-3,5,3,7,1,6};
+                    //  0,1,2, 3, 4,5,6,7,8
                        // 3, 3 , 5, 5
     static int K = 3;
 
@@ -32,7 +36,7 @@ public class SlidingMaxWindow {
 
         for(int i=K; i<ARR.length; i++){
 
-            while (!dq.isEmpty() && dq.peekFirst() <= i-K){
+            while (!dq.isEmpty() && dq.peekFirst() < i-K){
                 dq.removeFirst();
             }
 

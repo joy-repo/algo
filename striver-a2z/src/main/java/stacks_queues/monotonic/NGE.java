@@ -26,6 +26,6 @@ public class NGE {
                 stk.push(ARR[i]);
             }
 
-        System.out.println(res);
+        for(int c : res) System.out.println(c);
     }
 }
