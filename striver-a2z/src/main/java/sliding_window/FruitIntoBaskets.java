@@ -20,7 +20,7 @@ public class FruitIntoBaskets {
         int res=0;
         int l =0;
         int r=0;
-        int k =0;
+
         Map<Integer, Integer> map = new HashMap<>();
 
         while(r < ARR.length){
