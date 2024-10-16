@@ -1,10 +1,7 @@
 package test;
 
-public class Test {
-
+public class Ttttt {
     public static void main(String[] args) {
-        System.out.println("yuyiuyu");
-
-
+        System.out.println("uiiiuiuui");
     }
 }
