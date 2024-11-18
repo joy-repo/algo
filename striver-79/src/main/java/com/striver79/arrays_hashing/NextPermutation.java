@@ -17,7 +17,6 @@ public class NextPermutation {
 
     private static void sol1() {
 
-
         int i = arr.length-2;
 
         while (i >=0){
