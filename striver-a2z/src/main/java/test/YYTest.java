@@ -1,10 +1,8 @@
 package test;
 
-public class Test {
+public class YYTest {
 
     public static void main(String[] args) {
-        System.out.println("yuyiuyu");
-
-
+        System.out.println("joy");
     }
 }
