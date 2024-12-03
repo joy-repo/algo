@@ -22,7 +22,7 @@ public class Coin {
   }
 
   private static void solu() {
-
+    
     int res =0;
     int temp = AMOUNT;
 
