@@ -39,6 +39,6 @@ public class FindNextPermutation {
             end--;
         }
 
-        Arrays.stream(ARR).forEach(System.out::println);
+        Arrays.stream(ARR).forEach(System.out::print);
     }
 }
