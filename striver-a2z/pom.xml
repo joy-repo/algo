@@ -9,4 +9,20 @@
     <artifactId>striver-a2z</artifactId>
     <name>Archetype - striver-a2z</name>
     <url>http://maven.apache.org</url>
+    <dependencies>
+        <!-- https://m vnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
 </project>
