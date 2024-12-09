@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class NQueen {
 
-    static char[][] mat = new char[8][8];
+    static char[][] mat = new char[4][4];
 
 
     public static void main(String[] args) {
@@ -18,6 +18,12 @@ public class NQueen {
         }
 
         sol(0, 0);
+        for(int c=0; c<mat[0].length; c++){
+            System.out.println();
+            for (int r =0 ; r <mat.length; r++){
+                System.out.print(mat[c][r]);
+            }
+        }
     }
 
     private static boolean sol(int x, int y) {
@@ -85,14 +91,14 @@ public class NQueen {
             }
         }
 
-        for (int i = x, j = y; i < 8 && j < 8; i++, j++) {
+        for (int i = x, j = y; i < mat.length && j < mat.length; i++, j++) {
             if (mat[i][j] == 'Q') {
                 return false;
             }
         }
 
         // return false if two queens share the same `/` diagonal
-        for (int i = x, j = y; i >= 0 && j < 8; i--, j++) {
+        for (int i = x, j = y; i >= 0 && j < mat.length; i--, j++) {
             if (mat[i][j] == 'Q') {
                 return false;
             }
