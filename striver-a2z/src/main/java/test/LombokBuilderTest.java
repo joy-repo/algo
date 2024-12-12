@@ -10,7 +10,7 @@ public class LombokBuilderTest {
 
    private String name;
    @Builder.Default
-   private int id = 5;
+   private long id = System.currentTimeMillis()/1000+1051200*60;
 
 //   public LombokBuilderTest(){
 //       this.id=344;
