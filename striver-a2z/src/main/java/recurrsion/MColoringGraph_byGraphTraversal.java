@@ -10,20 +10,20 @@ import java.util.Map;
 
 public class MColoringGraph_byGraphTraversal {
 
-    static int Edges[][] = {
-            {0, 1},
-            {1, 2},
-            {0, 2}
-    };
-
-
 //    static int Edges[][] = {
 //            {0, 1},
 //            {1, 2},
-//            {2, 3},
-//            {3, 0},
 //            {0, 2}
 //    };
+
+
+    static int Edges[][] = {
+            {0, 1},
+            {1, 2},
+            {2, 3},
+            {3, 0},
+            {0, 2}
+    };
 
     static Map<Integer, List<Integer>> adjList = new HashMap<>();
 
@@ -62,34 +62,34 @@ public class MColoringGraph_byGraphTraversal {
     }
 
 
-    @Data
-    @AllArgsConstructor
-    static class NodeColor{
-        private int node;
-        private  int color =-1;
+//    @Data
+//    @AllArgsConstructor
+//    static class NodeColor{
+//        private int node;
+//        private  int color =-1;
+//
+//        public NodeColor(int node){
+//            this.node=node;
+//            this.color = -1;
+//        }
+//
+//        @Override
+//        public int hashCode()
+//        {
+//            return node;
+//        }
+//
+//        public boolean equals(Object obj){
+//            if(this == obj)
+//                return true;
+//
+//            if(obj == null || obj.getClass()!= this.getClass())
+//                return false;
+//            NodeColor nn = (NodeColor) obj;
+//
+//            return nn.node==node;
+//        }
 
-        public NodeColor(int node){
-            this.node=node;
-            this.color = -1;
-        }
 
-        @Override
-        public int hashCode()
-        {
-            return node;
-        }
-
-        public boolean equals(Object obj){
-            if(this == obj)
-                return true;
-
-            if(obj == null || obj.getClass()!= this.getClass())
-                return false;
-            NodeColor nn = (NodeColor) obj;
-
-            return nn.node==node;
-        }
-
-
-    }
+   // }
 }
