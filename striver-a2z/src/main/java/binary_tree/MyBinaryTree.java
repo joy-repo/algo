@@ -1,9 +1,6 @@
-package com.bst;
+package binary_tree;
 
-
-
-
-public class BinaryTree {
+public class MyBinaryTree {
 
     public static void main(String[] args) {
         Node rroott =generateBinaryTree();
@@ -53,6 +50,22 @@ public class BinaryTree {
 
     }
 
+    public static class Node {
+        public Node right;
+        public Node left;
+        public int data;
 
+        public Node() {
+        }
+
+        public Node(int data) {
+            this.data = data;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" + data + "}";
+        }
+    }
 
 }

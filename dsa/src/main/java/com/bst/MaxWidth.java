@@ -1,5 +1,7 @@
 package com.bst;
 
+
+
 public class MaxWidth {
 
     public static void main(String[] args) {
