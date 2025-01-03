@@ -1,5 +1,7 @@
 package binary_tree;
 
+import lombok.ToString;
+
 public class MyBinaryTree {
 
     public static void main(String[] args) {
@@ -49,7 +51,7 @@ public class MyBinaryTree {
 
 
     }
-
+    @ToString
     public static class Node {
         public Node right;
         public Node left;
