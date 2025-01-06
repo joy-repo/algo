@@ -68,6 +68,15 @@ public class MyBinaryTree {
         public String toString() {
             return "Node{" + data + "}";
         }
+
+        @Override
+        public int hashCode(){
+            return data;
+        }
+        @Override
+        public boolean equals  (Object obj){
+            return this.data==((Node)obj).data;
+        }
     }
 
 }
