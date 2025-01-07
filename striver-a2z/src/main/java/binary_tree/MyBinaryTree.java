@@ -1,5 +1,7 @@
 package binary_tree;
 
+import lombok.ToString;
+
 public class MyBinaryTree {
 
     public static void main(String[] args) {
@@ -49,7 +51,7 @@ public class MyBinaryTree {
 
 
     }
-
+    @ToString
     public static class Node {
         public Node right;
         public Node left;
@@ -65,6 +67,15 @@ public class MyBinaryTree {
         @Override
         public String toString() {
             return "Node{" + data + "}";
+        }
+
+        @Override
+        public int hashCode(){
+            return data;
+        }
+        @Override
+        public boolean equals  (Object obj){
+            return this.data==((Node)obj).data;
         }
     }
 

@@ -8,8 +8,8 @@ public class DuplicateElementLimiTedRangeArray {
     static int arr[] = {1, 2, 3, 1, 3, 6, 6};
 
     public static void main(String[] args) {
-        //printRepeating(arr, arr.length);
-        printRepeating1(arr, arr.length);
+        printRepeating(arr, arr.length);
+        //printRepeating1(arr, arr.length);
     }
 
     static void printRepeating(int arr[], int size) {
