@@ -30,4 +30,3 @@ Big
 Table : https://hemantkgupta.medium.com/insights-from-paper-bigtable-a-distributed-storage-system-for-structured-data-1eea26ee0f3a
 
 
-LAGO
