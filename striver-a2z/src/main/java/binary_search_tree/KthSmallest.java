@@ -3,7 +3,7 @@ package binary_search_tree;
 import binary_search_tree.MyBinarySearchTree.BSNode;
 
 public class KthSmallest {
-    public static int K = 10;
+    public static int K = 5;
 
     public static void main(String[] args) {
         MyBinarySearchTree mbst = MyBinarySearchTree.generateBST();
@@ -30,21 +30,20 @@ public class KthSmallest {
         count[0]++;
         if(count[0]==K) return root;
 
-        BSNode right =getKthSmallest(root.right, count);
-        if(right!=null) return right;
-        return null;
+        return getKthSmallest(root.right, count);
+
 
     }
 
     private static void sol(BSNode node, int[] count){
 
-        if(node==null || count[0]>K) return;
+        if(node==null || count[0]>K) return ;
 
         sol(node.left, count);
         count[0]++;
         if(count[0]==K){
-            System.out.print("ans: "+ node);
-            return;
+            System.out.println("ans: "+ node);
+            return ;
         }
 
         sol(node.right, count);
