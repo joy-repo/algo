@@ -19,6 +19,13 @@ public class MyBinaryTree {
 //      3    7           14  17
 //                              21
 
+    public static Node generateBT1(){
+        Node root = new Node(10);
+        root.left = new Node(5);
+        root.right = new Node(18);
+        return root;
+    }
+
     public static Node generateBinaryTree1() {
 
         Node root = new Node(1);
