@@ -51,19 +51,17 @@ public class DP_5_6_HouseRobber {
         if(i>finalIndex-1) return 0;
         if (i == finalIndex) return ARR.get(i);
 
-        if (!isLastSelected) {
-            int sum1 = solve_RECC(i + 1, true,  finalIndex)+ ARR.get(i);
+
+            int sum1 = solve_RECC(i + 1, true,  finalIndex) + ARR.get(i);
             int sum2 = solve_RECC(i + 1, false,  finalIndex);
             return Math.max(sum1, sum2);
 
-        } else {
-            int sum3 = solve_RECC(i + 1, false, finalIndex);
-            return sum3;
         }
-    }
+
 
     private static int memoization(int i, boolean isLastSelected, int summation, int finalIndex, int[][] memo){
-        if (i == finalIndex) return summation;
+        if (i == finalIndex)
+            return summation;
 
         if(isLastSelected){
             if(memo[1][i]!=-1)
@@ -78,15 +76,12 @@ public class DP_5_6_HouseRobber {
              int sum2 = memoization(i + 1, false, summation, finalIndex, memo);
             memo[0][i]= Math.max(sum1, sum2);
             return memo[0][i];
-
         } else {
-
             memo[1][i] = memoization(i + 1, false, summation, finalIndex, memo);
             return memo[1][i+1];
         }
-
-
     }
+
 
 
     /////////////////// MEMOIZATION- without Containerization//////////////////
@@ -131,6 +126,7 @@ public class DP_5_6_HouseRobber {
          dp[ind] = Math.max(pick, nonPick);
          return dp[ind];
     }
+
 
 
 }
