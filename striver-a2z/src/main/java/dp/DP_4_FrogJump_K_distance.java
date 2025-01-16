@@ -50,16 +50,19 @@ public class DP_4_FrogJump_K_distance {
     private static void tabularization(){
         int[] dp = new int[HEIGHT+1];
         Arrays.fill(dp, -1);
-        dp[0]= Integer.MAX_VALUE;
+        dp[0]= 0;
         for(int i=1; i<dp.length;i++){
             int res =Integer.MAX_VALUE;
             for(int j =1 ; j<=K; j++){
-                if(i-j<0) break;
-                res = Math.min(res, dp[i-j]);
+                if(i-j>=0) {
+                    res = Math.min(res, dp[i-j]+1);
+                }
             }
-            dp[i]=Math.min(dp[i], res+1);
+            dp[i]=res;
         }
         System.out.println();
+        System.out.println("------");
+
         Arrays.stream(dp).forEach(e -> System.out.print(e + ","));
     }
 
