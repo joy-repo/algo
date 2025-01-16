@@ -2,7 +2,7 @@ package dp.random_probs;
 
 import java.util.Arrays;
 
-public class CoinChange {
+public class CoinChange_minCoinRequired_InfiniteSupply {
 
     static int[] ARR = {1,5,6};
     static int TARGET = 15;
