@@ -9,9 +9,10 @@ public class DP_4_FrogJump_K_distance {
 
     public static void main(String[] args) {
         int res =sol_recc(0);
+        System.out.println("/////RECURSION//////////////");
         System.out.println(res);
 
-        /////MEMO//////////////
+        System.out.println("/////MEMO//////////////");
 
         int[] memo = new int[HEIGHT];
         Arrays.fill(memo,-1);
@@ -19,8 +20,8 @@ public class DP_4_FrogJump_K_distance {
          System.out.println(res);
          System.out.println();
          Arrays.stream(memo).forEach(e -> System.out.print(e +","));
-
-         ///TABU/////////
+         System.out.println();
+         System.out.print("///DP - TOP Down/////////");
         tabularization();
     }
 
@@ -61,7 +62,7 @@ public class DP_4_FrogJump_K_distance {
             dp[i]=res;
         }
         System.out.println();
-        System.out.println("------");
+       // System.out.println("------");
 
         Arrays.stream(dp).forEach(e -> System.out.print(e + ","));
     }
