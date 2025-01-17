@@ -2,7 +2,7 @@ package dp;
 
 import java.util.Arrays;
 
-public class DP_4_FrogJump_K_distance {
+public class DP_4_3_FrogJump_K_distance {
 
     static int HEIGHT=30;
     static int K=4;
