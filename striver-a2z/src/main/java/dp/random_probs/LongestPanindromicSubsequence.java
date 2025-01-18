@@ -23,6 +23,7 @@ public class LongestPanindromicSubsequence {
     }
 
     private static void byDP(){
+        int[][] DP = new int[][];
 
     }
 }
