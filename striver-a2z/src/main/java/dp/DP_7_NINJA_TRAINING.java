@@ -96,18 +96,16 @@ public class DP_7_NINJA_TRAINING {
     private static void byDP() {
         int[][] DP = new int[POINTS.length+1][POINTS[0].length+1];
 
-        for(int y =1; y<DP.length; y++){
-            for(int x=1; x<DP[0].length; x++){
+        for(int dayIdx =1; dayIdx<DP.length; dayIdx++){
+            for(int lastIdx=1; lastIdx<DP[0].length; lastIdx++){
                 int res = 0;
-                for(int i =0; i<POINTS[0].length; i++){
-
-                    if(i!=y-1 || y==1) {
-                        //int tmp = byRecc(dayIdx + 1, i) + POINTS[dayIdx][i];
-                        int tmp = DP[y - 1][x] + POINTS[y-1][i];
+                for(int i =0; i<POINTS[dayIdx-1].length; i++){
+                    if(i!=lastIdx || dayIdx==1) {
+                        int tmp = DP[dayIdx - 1][lastIdx] + POINTS[dayIdx-1][i];
                         res = Math.max(tmp, res);
                     }
                 }
-                DP[y][x]=res;
+                DP[dayIdx][lastIdx]=res;
             }
         }
         System.out.println();
