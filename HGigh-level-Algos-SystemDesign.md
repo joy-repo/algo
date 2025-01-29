@@ -29,4 +29,9 @@ Big
 
 Table : https://hemantkgupta.medium.com/insights-from-paper-bigtable-a-distributed-storage-system-for-structured-data-1eea26ee0f3a
 
-
+Kafka:
+How to handle retry.
+transaction : only once delivery
+Dual write problem : https://www.youtube.com/watch?v=FpLXCBr7ucA
+CDC, Transactional Out of Box, Event Sourcing
+SASL Confluent : 
