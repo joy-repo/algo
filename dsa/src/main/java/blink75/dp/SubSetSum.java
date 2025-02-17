@@ -8,7 +8,7 @@ public class SubSetSum {
   public static void main(String[] args) {
     boolean res =sol_RECC(0,0);
     System.out.println(res);
-   // sol_DP();
+   sol_DP();
   }
 
   private static void sol_DP() {
@@ -18,8 +18,6 @@ public class SubSetSum {
     for(int r=1; r< ARR.length; r++){
 
       for(int c=0; c< SUM; c++){
-
-
 
         DP[r][c] = DP[r-1][c-ARR[r]] || DP[r-1][c];
 

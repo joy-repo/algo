@@ -150,4 +150,4 @@ https://www.udemy.com/share/1020rO3@kxclHUP0QFP1DVMLnxcHbHsC5ePvL4rwkMFwMDpTvm1h
 * ZERODHA SQL TUNING     : https://www.youtube.com/watch?v=XB2lF_Z9cbs&pp=ygUbemVyb2RoYSBsb2dpbmcgYXJjaGl0ZWN0dXJl
 * ZERODHA SCALING : https://www.youtube.com/watch?v=tkH-r4oJEQI&pp=ygUbemVyb2RoYSBsb2dpbmcgYXJjaGl0ZWN0dXJl
 * ZERODHA SYSTEM DESIGN : https://www.youtube.com/watch?v=bdBCdrrAwkg&pp=ygUbemVyb2RoYSBsb2dpbmcgYXJjaGl0ZWN0dXJl
-*  CLOUD TO BARE METAL DUKAAN : https://www.youtube.com/watch?v=vFxQyZX84Ro&pp=ygUQRFVLQUFOIFRFQ0ggQkxPRw%3D%3D 
+* CLOUD TO BARE METAL DUKAAN : https://www.youtube.com/watch?v=vFxQyZX84Ro&pp=ygUQRFVLQUFOIFRFQ0ggQkxPRw%3D%3D 

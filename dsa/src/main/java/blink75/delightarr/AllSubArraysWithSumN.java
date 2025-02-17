@@ -36,5 +36,9 @@ public class AllSubArraysWithSumN {
 
     }
     System.out.println(res);
+
+
   }
+
+
 }
