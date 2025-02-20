@@ -23,7 +23,7 @@ public class TTTTTTT {
 
     public static void main(String[] args) {
 
-
+        "uuiui".equalsIgnoreCase("uuuu");
     }
 
 }

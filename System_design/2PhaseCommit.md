@@ -42,13 +42,14 @@ https://www.youtube.com/watch?v=lceenm34m-w&t=812s
 
 Example of Two-Phase Locking
 
-Step	Transaction T1	        Locking Status
-1	Acquire Lock(X)	            Growing Phase
-2	Acquire Lock(Y)	            Growing Phase
-3	Perform operation on X, Y	Growing Phase
-4	Release Lock(X)	            Shrinking Phase
-5	Release Lock(Y)	            Shrinking Phase
-6	Commit	                    Done
+Step|	Transaction T1	|        Locking Status
+---|---|---
+1|	Acquire Lock(X)|	            Growing Phase
+2|	Acquire Lock(Y)|	            Growing Phase
+3|	Perform operation on X, Y|	Growing Phase
+4|	Release Lock(X)	 |           Shrinking Phase
+5|	Release Lock(Y)	|            Shrinking Phase
+6|	Commit	   |                 Done
 
 
 Once the shrinking phase starts, no new locks can be acquired.

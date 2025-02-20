@@ -76,7 +76,7 @@ will start a new proposal with a higher number (e.g., N=2).</br>
 
 
 
-## Paxos in Distributed Transactions - Example
+# Paxos in Distributed Transactions - Example
 
 🔹 What is a Distributed Transaction?
 
@@ -270,8 +270,8 @@ Proposer: Transaction COMMITTED!
 ```
 🔹 Key Takeaways
 
-✔ Ensures fault tolerance using consensus.
-✔ Majority voting prevents inconsistencies.
-✔ Handles failures gracefully (new proposer can retry).
+✔ Ensures fault tolerance using consensus. </br>
+✔ Majority voting prevents inconsistencies. </br>
+✔ Handles failures gracefully (new proposer can retry). </br>
 
 Would you like me to extend this with failure handling and leader election? 🚀
