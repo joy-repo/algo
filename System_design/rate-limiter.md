@@ -94,7 +94,7 @@ is added to the queue.
 
 * A burst of traffic fills up the queue with old req
 
-### Fixed window counter 
+### Fixed Predefied window counter 
 
 
 * The algorithm divides the timeline into fix-sized time windows and assign a counter for
@@ -108,6 +108,8 @@ time window starts.
 Issue is the Brust of traffic at the edges.
 
 ![brust_of_traffic.png](brust_of_traffic.png)
+
+Implementation : [FixedPredefinedWindowRateLimiter.java](..%2Fdsa%2Fsrc%2Fmain%2Fjava%2Fatlassian%2Frate_limiter%2FFixedPredefinedWindowRateLimiter.java)
 
 
 **Disadsvantages:**
