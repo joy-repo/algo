@@ -118,9 +118,14 @@ quota to go through.
 ### Sliding window counter algorithm
 
 * Instead of a fixed start and end time, it counts requests within a moving window (e.g., last 60 seconds).
-* Pvides a smoother rate-limiting experience.
+* Provides a smoother rate-limiting experience.
 
+Implementation : [SlidingWindowRateLimiter.java](..%2Fdsa%2Fsrc%2Fmain%2Fjava%2Fatlassian%2Frate_limiter%2FSlidingWindowRateLimiter.java)
 
+* If the system handles millions of requests per second, consider a bucket-based approach 
+(e.g., Fixed Window or Token Bucket) instead of storing every timestamp.
+* Garbage collection (GC) impact: If millions of keys accumulate in memory, 
+periodic cleanup with background threads might be useful.
 
 
 
