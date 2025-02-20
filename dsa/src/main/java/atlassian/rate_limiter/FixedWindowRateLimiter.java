@@ -44,7 +44,7 @@ public class FixedWindowRateLimiter {
     }
 
     public static void main(String[] args) {
-        FixedWindowRateLimiter limiter = new FixedWindowRateLimiter(5, 10); // 5 requests per 10 seconds
+        FixedPredefineRateLimiterWindowInOOD limiter = new FixedPredefineRateLimiterWindowInOOD(5, 10); // 5 requests per 10 seconds
 
         Runnable task = () -> {
             String user = "user1";
