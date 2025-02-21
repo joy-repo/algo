@@ -1,5 +1,7 @@
 package atlassian.rate_limiter;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -68,15 +70,19 @@ public class SlidingWindowRateLimiter {
     public static void main(String[] args) {
 
 
-        SlidingWindowRateLimiter limiter = new SlidingWindowRateLimiter(5, 10);
+        SlidingWindowRateLimiter limiter = new SlidingWindowRateLimiter(3, 1);
         String userId1 = "User123";
         String userId2 = "User456";
 
-        for (int i = 0; i < 10; i++) {
-            System.out.println("User 1 - Request " + (i + 1) + ": " + (limiter.allowRequest(userId1) ? "Allowed" : "Rejected"));
-            System.out.println("User 2 - Request " + (i + 1) + ": " + (limiter.allowRequest(userId2) ? "Allowed" : "Rejected"));
+       // LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+       // String formattedDate = now.format(formatter);
+
+        for (int i = 0; i < 20; i++) {
+            System.out.println("time: "+ LocalDateTime.now().format(formatter) +" User 1 - Request " + (i + 1) + ": " + (limiter.allowRequest(userId1) ? "Allowed" : "Rejected"));
+           // System.out.println("User 2 - Request " + (i + 1) + ": " + (limiter.allowRequest(userId2) ? "Allowed" : "Rejected"));
             try {
-                Thread.sleep(1000); // Simulate request interval
+                Thread.sleep(100); // Simulate request interval
             } catch (InterruptedException ignored) {}
         }
     }
