@@ -1,4 +1,4 @@
-package com.atlassian;
+package atlassian;
 
 import java.util.ArrayList;
 import java.util.Collections;
