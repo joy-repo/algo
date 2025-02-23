@@ -91,7 +91,7 @@ class NestedFlattener {
 }
 
 // Example usage demonstrating the improved design.
-public class ImprovedNestedListDemo {
+public class Portfolio{
     public static void main(String[] args) {
         // Construct a nested structure: [1, [2, 3], [4, [5, 6]], 7]
         CompositeElement root = new CompositeElement();
