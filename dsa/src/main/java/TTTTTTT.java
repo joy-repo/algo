@@ -23,7 +23,15 @@ public class TTTTTTT {
 
     public static void main(String[] args) {
 
-        "uuiui".equalsIgnoreCase("uuuu");
+        System.out.println(getSignature("hello"));
+    }
+
+    private static String getSignature(String s) {
+        int[] freq = new int[26]; // Only lowercase letters
+        for (char c : s.toCharArray()) {
+            freq[c - 'a']++;
+        }
+        return Arrays.toString(freq); // Convert frequency array to a unique key
     }
 
 }

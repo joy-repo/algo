@@ -2,7 +2,6 @@ package atlassian.rate_limiter;
 
 
 
-import java.io.FileOutputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ConcurrentHashMap;

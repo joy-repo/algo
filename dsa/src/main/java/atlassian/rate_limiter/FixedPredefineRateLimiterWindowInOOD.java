@@ -1,5 +1,7 @@
 package atlassian.rate_limiter;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -30,12 +32,12 @@ class RateLimitWindow {
 }
 
 // TODO: Step 3: User-Specific Rate Limiter
-class UserRateLimiter {
+class UserRateLimiterFW {
     private final int maxRequests;
     private final long windowSizeInMillis;
     private RateLimitWindow currentWindow;
 
-    public UserRateLimiter(int maxRequests, long windowSizeInMillis) {
+    public UserRateLimiterFW(int maxRequests, long windowSizeInMillis) {
         this.maxRequests = maxRequests;
         this.windowSizeInMillis = windowSizeInMillis;
         this.currentWindow = new RateLimitWindow(System.currentTimeMillis(), maxRequests);
@@ -57,7 +59,7 @@ class UserRateLimiter {
 public class FixedPredefineRateLimiterWindowInOOD implements RateLimiter {
     private final int maxRequests;
     private final long windowSizeInMillis;
-    private final ConcurrentHashMap<String, UserRateLimiter> userLimiters;
+    private final ConcurrentHashMap<String, UserRateLimiterFW> userLimiters;
 
     public FixedPredefineRateLimiterWindowInOOD(int maxRequests, int windowSizeInSeconds) {
         this.maxRequests = maxRequests;
@@ -67,28 +69,29 @@ public class FixedPredefineRateLimiterWindowInOOD implements RateLimiter {
 
     @Override
     public boolean allowRequest(String userId) {
-        userLimiters.computeIfAbsent(userId, key -> new UserRateLimiter(maxRequests, windowSizeInMillis));
+        userLimiters.computeIfAbsent(userId, key -> new UserRateLimiterFW(maxRequests, windowSizeInMillis));
         return userLimiters.get(userId).allowRequest();
     }
 
     public static void main(String[] args) {
-        RateLimiter limiter = new FixedPredefineRateLimiterWindowInOOD(5, 10); // 5 requests per 10-second window
+        RateLimiter limiter = new FixedPredefineRateLimiterWindowInOOD(3, 1); // 5 requests per 10-second window
 
         Runnable task = () -> {
             String user = "user1";
-            for (int i = 0; i < 10; i++) {
-                System.out.println(Thread.currentThread().getName() + " Request " + (i + 1) + ": " +
-                        (limiter.allowRequest(user) ? "Allowed" : "Rejected"));
+            DateTimeFormatter formatter =  DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+            for (int i = 0; i < 25; i++) {
+                System.out.println("Time : " + LocalDateTime.now().format(formatter)  +
+                        (limiter.allowRequest(user) ? " :  Allowed" : "  : Rejected"));
                 try {
-                    Thread.sleep(2000); // Simulate request interval
+                    Thread.sleep(100); // Simulate request interval
                 } catch (InterruptedException ignored) {}
             }
         };
 
         // Simulating multiple concurrent users
         Thread t1 = new Thread(task);
-        Thread t2 = new Thread(task);
+//        Thread t2 = new Thread(task);
         t1.start();
-        t2.start();
+//        t2.start();
     }
 }

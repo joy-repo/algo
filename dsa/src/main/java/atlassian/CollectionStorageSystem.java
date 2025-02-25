@@ -38,7 +38,9 @@ file5.txt (size: 10)
 
 So, basically collections are like tags and files can be tagged.
 We have to implement methods that can return total size of all the files added to the system and topN collections.
-TopN collections is based on total size of all the files tagged with particular collection. In above example "collection1" has 2 files with total size 400, "collection2" has 1 file with total size 300 and there are 2 files without any collection with total size 110.
+TopN collections is based on total size of all the files tagged with particular collection.
+In above example "collection1" has 2 files with total size 400, "collection2" has 1 file with total size 300 and there are 2 files
+without any collection with total size 110.
 Top2 collections would return ["collection1", "collection2"]
  */
 
