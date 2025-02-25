@@ -58,3 +58,5 @@ public class TopKElements_CountSort {
         System.out.println(Arrays.asList(freqArr));
     }
 }
+
+//which simplifies to O(N + K) in most cases
