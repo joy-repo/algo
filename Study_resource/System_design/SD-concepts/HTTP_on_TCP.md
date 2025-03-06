@@ -98,4 +98,36 @@ Example:
 
 Now that your browser knows the IP address of the website, it needs to connect to the server.
 Since HTTP runs on top of TCP, your browser initiates a TCP connection to the server at 93.184.216.34 (Port 80 for HTTP, Port 443 for HTTPS).
-   
+
+This happens using the Three-Way Handshake:
+1.	**SYN:** Your browser sends a SYN (synchronize) message to the server.
+2.	**SYN-ACK:** The server responds with a SYN-ACK (synchronize-acknowledge).
+3.	**ACK:** Your browser sends an ACK (acknowledge) back, and the TCP connection is established.
+
+Now, we have a reliable TCP connection.
+
+### Step 3: Sending an HTTP Request
+
+Your browser now sends an HTTP request over the TCP connection.
+Example request:
+
+```
+GET /index.html HTTP/1.1  
+Host: www.example.com  
+User-Agent: Mozilla/5.0  
+Accept: text/html
+
+```
+This tells the server:
+* “I want the index.html page.”
+* “I’m using Mozilla/Chrome/etc.”
+* “I can accept text/html content.”
+
+
+### Step 4: Server Processes the Request
+
+* The web server receives the HTTP request.
+* It finds index.html (or generates it dynamically).
+* It prepares an HTTP response.
+
+### Step 5: Server Sends an HTTP Res 
