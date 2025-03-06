@@ -17,10 +17,10 @@ https://blog.algomaster.io/p/design-a-distributed-job-scheduler
 
 High-Level System Design Questions:
 
-1. Design Google Docs
-2. Design Twitter
-3. Design LeetCode
-4. Design an E-Commerce Portal (e.g., Amazon)
+1. Design Google Docs-> https://www.youtube.com/watch?v=YCjVIDv0zQY
+2. Design Twitter -> https://www.youtube.com/watch?v=Nfa-uUHuFHg&t=17s&pp=ygUXaGVsbG8gaW50ZXJ2aWV3IHR3aXR0ZXI%3D
+3. Design LeetCode -> https://www.youtube.com/watch?v=1xHADtekTNg&pp=ygUfaGVsbG8gaW50ZXJ2aWV3IERlc2lnbiBMZWV0Q29kZQ%3D%3D
+4. Design an E-Commerce Portal (e.g., Amazon) -> 
 5. Design Splitwise
 6. Design a Vending Machine
 7. Design Google Autosuggest
