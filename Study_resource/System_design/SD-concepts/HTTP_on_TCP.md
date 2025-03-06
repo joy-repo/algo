@@ -123,6 +123,18 @@ This tells the server:
 * “I’m using Mozilla/Chrome/etc.”
 * “I can accept text/html content.”
 
+* This HTTP GET request is encapsulated inside a TCP segment, which is then sent to the server.
+* TCP ensures the request arrives intact and in the correct order.
+
+#### TCP Segmentation and Transmission
+
+* Since HTTP messages can be large, TCP may break the GET request into smaller packets before sending them.
+* TCP adds headers to each packet (sequence number, error-checking data, etc.).
+* Packets are sent individually and may take different routes through the network.
+* If a packet is lost, TCP retransmits it.
+
+**At the server side, TCP reassembles the packets and hands the complete HTTP GET request to the application layer (web server).**
+
 
 ### Step 4: Server Processes the Request
 
@@ -155,4 +167,10 @@ Content-Length: 5120
 * If a packet is lost, TCP retransmits it.
 * Once all packets are received, TCP reassembles them.
 
+### Step 7: Browser Renders the Page
 
+### Step 8 : Closing the Connection
+
+* If using HTTP/1.0, the connection closes immediately.
+* If using HTTP/1.1, the connection stays open for more requests (Keep-Alive).
+* If using HTTP/2, multiple requests are handled over a single connection for efficiency.
