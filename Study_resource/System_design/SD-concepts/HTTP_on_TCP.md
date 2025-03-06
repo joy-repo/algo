@@ -151,6 +151,8 @@ Content-Length: 5120
 ### Step 6: TCP Ensures Reliable Delivery
 
 * The HTTP response is broken into packets.
-*  ensures all packets arrive, in the correct order.
-	•`If a packet is lost, TCP retransmits it.
-	•	Once all packets are received, TCP reassembles them.
+* TCP ensures all packets arrive, in the correct order.
+* If a packet is lost, TCP retransmits it.
+* Once all packets are received, TCP reassembles them.
+
+
