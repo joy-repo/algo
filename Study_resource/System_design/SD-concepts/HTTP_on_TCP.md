@@ -130,4 +130,27 @@ This tells the server:
 * It finds index.html (or generates it dynamically).
 * It prepares an HTTP response.
 
-### Step 5: Server Sends an HTTP Res 
+### Step 5: Server Sends an HTTP Response Over TCP
+
+```http request
+HTTP/1.1 200 OK  
+Content-Type: text/html  
+Content-Length: 5120  
+
+<html>  
+  <head><title>Example</title></head>  
+  <body>Welcome to Example!</body>  
+</html>
+```
+
+* HTTP/1.1 200 OK → Success, the page is available.
+* tent-Type: text/html → It’s an HTML page.
+* tent-Length: 5120 → Size of the content. 
+* actual HTML content follows.
+
+### Step 6: TCP Ensures Reliable Delivery
+
+* The HTTP response is broken into packets.
+*  ensures all packets arrive, in the correct order.
+	•`If a packet is lost, TCP retransmits it.
+	•	Once all packets are received, TCP reassembles them.
