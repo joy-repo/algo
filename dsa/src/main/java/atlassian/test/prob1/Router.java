@@ -1,6 +1,6 @@
 package atlassian.test.prob1;
 
-import com.test.PathNotFoundException;
+
 import org.junit.Test;
 
 import java.util.HashMap;
