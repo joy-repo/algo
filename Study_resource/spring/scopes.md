@@ -133,3 +133,73 @@ public class SessionScopedBean implements MyInterface {
 |Request|	✅ Yes|	New bean per request but injected into singleton|
 |Session|	✅ Yes|	New bean per user session but injected into singleton|
 |Application|	❌ No|	Single instance per application|
+
+
+### Behind the Scenes: What Happens Internally?
+
+When ScopedProxyMode.TARGET_CLASS is used, 
+Spring does NOT inject the actual RequestScopedBean into SingletonBean. 
+Instead:
+
+1. Spring creates a subclass proxy (CGLIB proxy for classes).
+2. The proxy does not contain the actual bean but knows how to retrieve it from the BeanFactory.
+3. Each time requestScopedBean.getMessage() is called:
+     * The proxy fetches the correct bean from the Spring context (per request).
+     * The method is executed on the actual instance corresponding to the current request.
+
+
+### How ProxyBean is created
+
+```java
+@Component
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class RequestScopedBean {
+    public String getMessage() {
+        return "Request Scoped Bean - " + System.identityHashCode(this);
+    }
+}
+
+```
+
+The above code gets converted to :
+
+```java
+// Pseudo-code representing what Spring does internally
+public class RequestScopedBean$$EnhancerBySpringCGLIB extends RequestScopedBean {
+    private final BeanFactory beanFactory;
+
+    public String getMessage() {
+        // Dynamically fetch the real instance from Spring context
+        RequestScopedBean realBean = (RequestScopedBean) beanFactory.getBean("requestScopedBean");
+        return realBean.getMessage();
+    }
+}
+```
+### What Happens in ScopedProxyMode.INTERFACES?
+* If the bean is an interface, Spring uses JDK dynamic proxy instead of CGLIB.
+* The proxy implements the interface and delegates calls dynamically.
+
+```java
+@Component
+@Scope(value = "session", proxyMode = ScopedProxyMode.INTERFACES)
+public class SessionScopedBean implements MyInterface {
+    public String getMessage() {
+        return "Session Scoped Bean - " + System.identityHashCode(this);
+    }
+}
+```
+
+changes to :
+
+```java
+public class $Proxy123 implements MyInterface {
+    private final BeanFactory beanFactory;
+
+    public String getMessage() {
+        MyInterface realBean = (MyInterface) beanFactory.getBean("sessionScopedBean");
+        return realBean.getMessage();
+    }
+}
+```
+
+🔹 The proxy fetches the correct instance dynamically per session.
