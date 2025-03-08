@@ -99,3 +99,37 @@ public class SingletonBean {
 }
 ```
 
+### ScopedProxyMode Types
+
+|Proxy Mode|	Explanation |
+|---|---|
+|ScopedProxyMode.TARGET_CLASS|	Uses CGLIB proxy (for classes)|
+|ScopedProxyMode.INTERFACES	|Uses JDK dynamic proxy (for interfaces)|
+
+👉 **Use TARGET_CLASS for classes and INTERFACES if working with interfaces.**
+
+Example :
+
+```java
+@Component
+@Scope(value = "session", proxyMode = ScopedProxyMode.INTERFACES)
+public class SessionScopedBean implements MyInterface {
+    public String getMessage() {
+        return "Session Scoped Bean - " + System.identityHashCode(this);
+    }
+}
+```
+
+**Where is Scoped Proxy Needed?**
+
+* Injecting request/session/application scoped beans into singleton beans.
+* Preventing incorrect bean reuse across different users or requests.
+
+
+|Scope	|Needs Scoped Proxy?|	Why?|
+|---|---|---|
+|Singleton|	❌ No|	Already global|
+|Prototype|	❌ No|	New instance created anyway|
+|Request|	✅ Yes|	New bean per request but injected into singleton|
+|Session|	✅ Yes|	New bean per user session but injected into singleton|
+|Application|	❌ No|	Single instance per application|
