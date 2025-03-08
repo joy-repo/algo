@@ -67,9 +67,9 @@ If node_0001 crashes, ZooKeeper elects node_0002 as the new leader.
 
 ZooKeeper zk = new ZooKeeper("localhost:2181", 2000, null);
 byte[] data = zk.getData("/myZNode", new Watcher() {
-public void process(WatchedEvent event) {
-System.out.println("ZNode changed!");
-}
+    public void process(WatchedEvent event) {
+        System.out.println("ZNode changed!");
+    }
 }, null);
 ```
 🔹 ZooKeeper Architecture
