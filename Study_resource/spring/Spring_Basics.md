@@ -1,7 +1,7 @@
 ## Table of Contents
 
 1. [Types of Bean Injection](#Types of Bean Injection)
-   1. [Constructor Injection](#**1.  Constructor Injection : preferred way**)
+2. [Types  Of Autowiring](###Types  Of Autowiring)
 
 
 
@@ -98,4 +98,4 @@ public class UserService {
 }
 ```
 
-
+### Types  Of Autowiring
