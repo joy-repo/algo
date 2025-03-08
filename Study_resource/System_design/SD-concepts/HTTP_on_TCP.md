@@ -175,3 +175,5 @@ Content-Length: 5120
 * If using HTTP/1.1, the connection stays open for more requests (Keep-Alive).
 * If using HTTP/2, multiple requests are handled over a single connection for efficiency.
 
+Custom Implementation of TCP: 
+[custom_http](../../../sd-prgms/src/main/java/com/custom_http)
