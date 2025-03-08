@@ -48,24 +48,25 @@ it sends Accept(1, “A is Leader”) to Acceptors.
 A → B, C: "Accept(1, A is Leader)"
 ```
 
-•	Each Acceptor checks if it already promised a higher proposal number.</br>
-•	Since no higher proposal exists, B and C accept the proposal.
+* Each Acceptor checks if it already promised a higher proposal number.</br>
+* Since no higher proposal exists, B and C accept the proposal.
 
 ✅ Majority (B, C) accepted the proposal!
 
 **Step 4:** </br>
 Learners Learn the Leader
 
-Once a majority has accepted a value, the Learners (all nodes) learn the final decision:
+Once a majority has accepted a value, the Learners (all nodes) 
+learn the final decision:
 “A is Leader”
 
 ✅ Consensus is reached! All nodes agree that A is the leader. 🎉
 
 📌 **What Happens if There’s a Failure?** </br>
 
-•	If A crashes before Step 3, another proposer (e.g., B) 
+* If A crashes before Step 3, another proposer (e.g., B) 
 will start a new proposal with a higher number (e.g., N=2).</br>
-•	The system will always agree on one final value, ensuring correctness.
+* The system will always agree on one final value, ensuring correctness.
 
 
 📌 **Summary of Paxos Workflow**
@@ -113,8 +114,8 @@ Ledger → Bank1: "Promise(1, None)"
 🔹 **Step 2:** Accept Phase (Agreement on Transaction)
 1.	Bank1 now sends Accept(1, “Commit Transaction”) to all acceptors.
 2.	Acceptors check:
-•	If they haven’t promised a higher proposal, they accept the transaction.
-•	Otherwise, they reject it.
+   * If they haven’t promised a higher proposal, they accept the transaction.
+     * Otherwise, they reject it.
 ```
 Bank1 → Bank2, Ledger: "Accept(1, Commit)"
 Bank2 → Bank1: "Accepted(1, Commit)"
