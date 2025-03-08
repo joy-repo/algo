@@ -72,5 +72,5 @@ public class UserService {
 
  Disadvantages:
 * Hard to test (you can’t mock dependencies easily).
-•	Less flexible (can’t use final fields).
-•	Tightly coupled (Spring framework is required).
+* Less flexible (can’t use final fields).
+* Tightly coupled (Spring framework is required).
