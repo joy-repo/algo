@@ -68,4 +68,9 @@ public class UserService {
 }
 ```
 
-**3.  `Setter Injection : Used when the dependency is optional.`**
+**3. Field Injection (Not Recommended ❌)**
+
+ Disadvantages:
+* Hard to test (you can’t mock dependencies easily).
+•	Less flexible (can’t use final fields).
+•	Tightly coupled (Spring framework is required).
