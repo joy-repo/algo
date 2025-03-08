@@ -1,11 +1,11 @@
 
-4 main Muti-threading Questions
+## 4 main Muti-threading Questions
 1. WebCrawler
 2. Distributed Task Scheduler
 3. Multi-Threaded LRU
 4. BathRoom Problem
 
-Java Based MultiThreading
+## Java Based MultiThreading
 
 1. Implement Custom - Executor Service
 2. Producer-Consumer using wait-notify
@@ -15,7 +15,7 @@ Java Based MultiThreading
 
 
 
-How to implement Multi-threaded and non-blocking
+## How to implement Multi-threaded and non-blocking
 * Maps - concurrentHashMap. alternate to segmentation
 * Stack
 * Queue
