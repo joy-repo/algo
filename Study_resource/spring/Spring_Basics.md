@@ -1,3 +1,9 @@
+## Table of Contents
+
+1. [Types of Bean Injection](#Types of Bean Injection)
+   1. [Constructor Injection](#**1.  Constructor Injection : preferred way**)
+
+
 
 ### Types of Bean Injection
 
@@ -74,3 +80,22 @@ public class UserService {
 * Hard to test (you can’t mock dependencies easily).
 * Less flexible (can’t use final fields).
 * Tightly coupled (Spring framework is required).
+
+```java
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+    
+    @Autowired
+    private UserRepository userRepository;  // Field Injection
+
+    public void getUsers() {
+        userRepository.findAll();
+    }
+}
+```
+
+
