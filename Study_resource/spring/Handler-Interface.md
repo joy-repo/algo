@@ -80,3 +80,135 @@ public class InterceptorConfig implements WebMvcConfigurer {
 3.	**afterCompletion()**
    * Runs after the response is sent to the client.
    * Used for cleanup activities like closing resources or error logging.
+
+--------------------------------------------------------------------------------------
+## Example :
+
+**This logic is just a proof of concept – 
+we can of course easily achieve the same result using session timeouts – 
+but the result is not the point here, the usage of the interceptor is.**
+
+## Handler Interceptor to Manage Sessions
+
+### 1. Custom Implementation of Session Timeouts
+
+For example, if a user forgot to log out, the inactive time counter will prevent accessing the account 
+by unauthorized users. 
+In order to do that, we need to set constant for the inactive time
+
+```java
+private static final long MAX_INACTIVE_SESSION_TIME_MILLIS = 5 * 10000;
+```
+
+Now, we need to keep track of each session in our app, so we need to include this Spring Interface:
+
+```java
+@Autowired
+private HttpSession session;
+```
+
+### 2.  ***preHandle()***
+
+In this method we will include following operations:
+
+* setting timers to check handling time of the requests
+* checking if a user is logged in 
+* automatic logging out, if the user’s inactive session time exceeds maximum allowed value
+
+```java
+
+public class SessionTimerInterceptor implements HandlerInterceptor {
+
+    private static Logger log = LoggerFactory.getLogger(SessionTimerInterceptor.class);
+
+    private static final long MAX_INACTIVE_SESSION_TIME = 5 * 10000;
+
+    @Autowired
+    private HttpSession session;
+
+    @Override
+    public boolean preHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler) throws Exception {
+        log.info("Pre handle method - check handling start time");
+        long startTime = System.currentTimeMillis();
+        request.setAttribute("executionTime", startTime);
+        if (isUserLogged()) {
+            session = request.getSession();
+            log.info("Time since last request in this session: {} ms", System.currentTimeMillis() - request.getSession()
+                    .getLastAccessedTime());
+            if (System.currentTimeMillis() - session.getLastAccessedTime() > MAX_INACTIVE_SESSION_TIME) {
+                log.warn("Logging out, due to inactive session");
+                SecurityContextHolder.clearContext();
+                request.logout();
+                response.sendRedirect("/spring-security-rest-full/logout");
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void postHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler, final ModelAndView model) throws Exception {
+        log.info("Post handle method - check execution time of handling");
+        long startTime = (Long) request.getAttribute("executionTime");
+        log.info("Execution time for handling the request was: {} ms", System.currentTimeMillis() - startTime);
+    }
+
+    public static boolean isUserLogged() {
+        try {
+            return !SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getName()
+                    .equals("anonymousUser");
+        } catch (Exception e) {
+            return false;
+        }
+    }
+}
+```
+
+### 3. ***postHandle()***
+
+This method is implementation just to get information, how long it took to process the current request.
+
+```java
+
+    @Override
+    public void postHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler, final ModelAndView model) throws Exception {
+        log.info("Post handle method - check execution time of handling");
+        long startTime = (Long) request.getAttribute("executionTime");
+        log.info("Execution time for handling the request was: {} ms", System.currentTimeMillis() - startTime);
+    }
+```
+
+### 4. Add the Interceptor in the WebMvcConfigurer
+
+```java
+@EnableWebMvc
+@Configuration
+@ComponentScan("com.baeldung.web.controller")
+public class MvcConfig implements WebMvcConfigurer {
+
+    public MvcConfig() {
+        super();
+    }
+
+    @Override
+    public void addInterceptors(final InterceptorRegistry registry) {
+
+        registry.addInterceptor(new SessionTimerInterceptor());
+    }
+
+    // API
+
+    @Override
+    public void addViewControllers(final ViewControllerRegistry registry) {
+        /*
+        registry.addViewController("/anonymous.html");
+        registry.addViewController("/login.html");
+        registry.addViewController("/homepage.html");
+         */
+
+    }
+   
+}
+```
+
