@@ -3,6 +3,14 @@
 
 ![interceptor.png](interceptor.png)
 
+|Feature |Filter (javax.servlet.Filter)| Interceptor (HandlerInterceptor)|
+|---|---|---|
+|Runs Before Controller? |Yes (Before DispatcherServlet)|Yes (Before Controller Execution)
+|Runs After Controller? |No |Yes (PostHandle & AfterCompletion)
+|Can Modify Response? |Yes |Yes
+|Runs for Static Resources? |Yes |No
+
+
 
 Interceptor is similar to a Servlet Filter, but in contrast 
 to the latter, it is located after DispatcherServlet and as a result, 
