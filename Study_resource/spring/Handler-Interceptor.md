@@ -81,6 +81,13 @@ public class InterceptorConfig implements WebMvcConfigurer {
    * Runs after the response is sent to the client.
    * Used for cleanup activities like closing resources or error logging.
 
+
+**When to Use Interceptors?**
+* Logging: Log request and response data.
+* Authentication & Authorization: Check if a user is authenticated or authorized.
+* Performance Monitoring: Measure time taken by a request.
+* Request/Response Modification: Modify request headers, parameters, or response bodies.
+
 --------------------------------------------------------------------------------------
 ## Example :
 
