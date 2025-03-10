@@ -24,3 +24,11 @@ and in turn each thread would have some state private to itself
 
 ![process_threads.png](process_threads.png)
 
+## Concurrency
+* A system capable of running several distinct programs or more than one independent unit of the same program in overlapping time intervals is called a concurrent system. 
+* The execution of two programs or units of the same program may not happen simultaneously.
+* A concurrent system can have two programs in progress at the same time where progress doesn’t imply execution. 
+* One program can be suspended while the other executes. 
+* Both programs are able to make progress as their execution is interleaved. 
+* In concurrent systems, the goal is to maximize throughput and minimize latency. For example, a browser running on a single core machine has to be responsive to user clicks but also be able to render HTML on screen as quickly as possible. Concurrent systems achieve lower latency and higher throughput when programs running on the system require frequent network or disk I/O.
+

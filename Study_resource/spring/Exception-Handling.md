@@ -1,12 +1,12 @@
 
 
-|Approach |When to Use|
-|---|---|
-|@ExceptionHandler|Handling specific exceptions inside a controller or globally|
-|@ControllerAdvice|Global exception handling for multiple controllers|
-|ProblemDetail|Standardized error response structure (Spring Boot 3)|
-|ResponseStatusException|Simple way to throw an HTTP error|
-|MethodArgumentNotValidException|Handling validation errors (@Valid)|
+| Approach                        |When to Use|
+|---------------------------------|---|
+| @ExceptionHandler               |Handling specific exceptions inside a controller or globally|
+| @ControllerAdvice               |Global exception handling for multiple controllers|
+| ProblemDetail (**NOT DONE**)    |Standardized error response structure (Spring Boot 3)|
+| ResponseStatusException         |Simple way to throw an HTTP error|
+| MethodArgumentNotValidException |Handling validation errors (@Valid)|
 
 ## @ExceptionHandler
 
@@ -120,7 +120,35 @@ ResponseStatusException is a built-in Spring exception that allows us to throw H
 ✅ No need for custom exception classes.
 ✅ Works well when handling specific errors inside controller methods.
 
+```java
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("/api/employees")
+public class EmployeeController {
+
+    @GetMapping("/{id}")
+    public Employee getEmployee(@PathVariable int id) {
+        if (id == 0) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found with ID: " + id);
+        }
+        return new Employee(id, "John Doe", "Developer");
+    }
+}
+```
+
+**Response :**
+
+```
+{
+    "timestamp": "2025-03-08T12:00:00.123+00:00",
+    "status": 404,
+    "error": "Not Found",
+    "message": "Employee not found with ID: 0",
+    "path": "/api/employees/0"
+}
+```
 
 
 
