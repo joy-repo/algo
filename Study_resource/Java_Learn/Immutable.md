@@ -17,13 +17,14 @@ The constructor should fully initialize all fields.
 5. Ensure deep copies of mutable objects
 If a field is a mutable object (like an array, List, or Date), return a deep copy instead of the original reference.
 
+6. Implement readResolve after Extending Serializable.
 
 ```java
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public final class ImmutablePerson {
+public final class ImmutablePerson implements Serializable {
     private final String name;
     private final int age;
     private final List<String> hobbies; // Mutable object
@@ -43,6 +44,10 @@ public final class ImmutablePerson {
 
     public int getAge() {
         return age;
+    }
+
+    protected Object readResolve() {
+        return this;
     }
 
     // Return an unmodifiable list instead of the original reference
