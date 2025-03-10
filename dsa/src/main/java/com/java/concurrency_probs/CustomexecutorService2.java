@@ -1,4 +1,4 @@
-package com.java;
+package com.java.concurrency_probs;
 
 //public class CustomexecutorService2 {
 //}
