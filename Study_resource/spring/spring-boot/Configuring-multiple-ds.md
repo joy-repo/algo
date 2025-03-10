@@ -289,3 +289,7 @@ public class DatabaseService {
     }
 }
 ```
+
+# Multi-Tenancy
+
+https://chatgpt.com/share/67cf06ff-3990-8010-b7a7-d7db3f887f9e
