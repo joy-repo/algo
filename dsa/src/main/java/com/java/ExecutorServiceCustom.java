@@ -1,6 +1,7 @@
 package com.java;
 
 
+import java.time.Instant;
 import java.util.concurrent.LinkedBlockingQueue;
 
 
@@ -10,24 +11,24 @@ interface MyExecutorService {
 
 class MyThreadPool implements MyExecutorService {
 
-    static int capacity;
-    static int currentCapacity;
-    static LinkedBlockingQueue<Runnable> taskQueue;
+     int capacity;
+     int currentCapacity;
+     LinkedBlockingQueue<Runnable> taskQueue;
     //    static LinkedBlockingQueue<Runner> runnerQueue;
-    Execution e;
+
 
     public MyThreadPool(int capacity) {
         this.capacity = capacity;
         currentCapacity = 0;
         taskQueue = new LinkedBlockingQueue<Runnable>();
-        e = new Execution();
+
     }
 
     @Override
     public void submit(Runnable r) {
-        if (MyThreadPool.currentCapacity < MyThreadPool.capacity) {
-            MyThreadPool.currentCapacity++;
-            Thread t = new Thread(new Execution());
+        if (currentCapacity < capacity) {
+            currentCapacity++;
+            Thread t = new Thread(new Execution(this));
             t.start();
             return;
         }
@@ -44,12 +45,16 @@ class Execution implements Runnable {
 //            t.start();
 //        }
 //    }
+    public MyThreadPool myThreadPool;
 
+    public Execution(MyThreadPool myThreadPool){
+        this.myThreadPool=myThreadPool;
+    }
     @Override
     public void run() {
         while (true) {
-            if (MyThreadPool.taskQueue.size() != 0) {
-                MyThreadPool.taskQueue.poll().run();
+            if (myThreadPool.taskQueue.size() != 0) {
+                myThreadPool.taskQueue.poll().run();
             }
         }
     }
@@ -78,7 +83,7 @@ class Mytask implements Runnable {
 
 public class ExecutorServiceCustom {
     public static void main(String[] args) {
-        MyExecutorService service = MyExecutors.myNewFixedThreadPool(3);
+        MyExecutorService service = MyExecutors.myNewFixedThreadPool(5);
         ExecutorServiceCustom ex = new ExecutorServiceCustom();
         for (int i = 0; i < 20; i++) {
             service.submit(ex::task);
@@ -93,6 +98,6 @@ public class ExecutorServiceCustom {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("hii" + Thread.currentThread().getName());
+        System.out.println("hii--" + Thread.currentThread().getName()+ " "+ Instant.now());
     }
 }
