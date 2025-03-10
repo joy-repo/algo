@@ -23,7 +23,7 @@ If you’re using Maven, add the following dependencies to your pom.xml:
 
 ## 2. Configure application.properties (or application.yml)
 
-```
+```properties
 spring.data.mongodb.uri=mongodb://localhost:27017/mydatabase
 spring.data.mongodb.database=mydatabase
 # if Autnentication
