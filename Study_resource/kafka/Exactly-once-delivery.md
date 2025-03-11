@@ -1,27 +1,13 @@
 # How to Ensure Exactly-Once Delivery in Kafka?
 
-## 1. Enable Idempotent Producer
+**HOW DO TRANSACTION WORK :** https://www.youtube.com/watch?v=Ki2D2o9aVl8
 
-* Ensures each message is written exactly once even if retries occur.
-* Requires acks=all to be set.
+Ensuring end-to-end deduplication in a distributed messaging system (like Apache Kafka) involves handling duplicates at multiple stages:
+1.	**Producer Level** – Prevent duplicate message production.
+2.	**Broker Level** – Ensure idempotent writes.
+3.	**Consumer Level** – Handle duplicate processing.
 
-
-```properties
-enable.idempotence=true
-acks=all
-retries=3
-max.in.flight.requests.per.connection=5  # Use 1 if using transactions
-```
-
-## 2. Use Kafka Transactions for End-to-End Exactly-Once
-
-If you’re consuming from one Kafka topic and producing to another (e.g., in stream processing), enable Kafka Transactions.
-
-Allows atomic writes across multiple topics/partitions.
-
-```properties
-transactional.id=unique-producer-id
-```
+### 1. Enable Idempotent Producer (Avoid Duplicate Messages at the Source)
 
 
 
