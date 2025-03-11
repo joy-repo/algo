@@ -97,8 +97,8 @@ public class CustomBlockingQueue_Conditional {
     public static void main(String[] args) {
         CustomBlockingQueue customBlockingQueue = new CustomBlockingQueue();
         // Creating producer and consumer threads
-        Thread producer = new Thread(new com.java.concurrency_probs.Producer(customBlockingQueue));
-        Thread consumer = new Thread(new com.java.concurrency_probs.Consumer(customBlockingQueue));
+        Thread producer = new Thread(new Producer(customBlockingQueue));
+        Thread consumer = new Thread(new Consumer(customBlockingQueue));
 
         producer.start();
         consumer.start();
