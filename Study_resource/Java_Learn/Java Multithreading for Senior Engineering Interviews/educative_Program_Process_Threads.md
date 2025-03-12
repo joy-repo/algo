@@ -39,7 +39,7 @@ and in turn each thread would have some state private to itself
 
 **In the case of an operating system, if it runs on a machine with say four CPUs then the operating system can execute four tasks at the same time, making execution parallel. Either a single (large) problem can be executed in parallel or distinct programs can be executed in parallel on a system supporting parallel execution.**
 
-![parallel_concurrent.png](parallel_concurrent.png)
+![parallel_concurrent.png](educative_parallel_concurrent.png)
 
 
 **Concurrency by employing one of the following multitasking models:**

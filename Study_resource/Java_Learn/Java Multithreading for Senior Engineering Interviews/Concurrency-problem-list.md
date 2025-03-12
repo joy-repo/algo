@@ -7,7 +7,7 @@
 
 ## Java Based MultiThreading
 
-1. Implement Custom - Executor Service -> [CustomexecutorService2.java](..%2F..%2F..%2Fdsa%2Fsrc%2Fmain%2Fjava%2Fcom%2Fjava%2Fconcurrency_probs%2FCustomexecutorService2.java)
+1. Implement Custom - Executor Service -> [CustomexecutorService2.java](../../../dsa/src/main/java/com/java/concurrency_probs/CustomexecutorService2.java)
 2. Producer-Consumer using wait-notify -> [ProducerConsumer_WaitNotify.java](..%2F..%2F..%2Fdsa%2Fsrc%2Fmain%2Fjava%2Fcom%2Fjava%2Fconcurrency_probs%2FProducerConsumer_WaitNotify.java)
 3. Producer-Consumer using Reentrant Lock
 4. Odd-Even  with 2/multi thread problem
