@@ -89,5 +89,13 @@ Like the wait method, notify() can only be called by the thread which owns the m
 
 This method is the same as the notify() one except that it wakes up all the threads that are waiting on the object's monitor.
 
+
+## Interrupted Exception
+
+If a thread is interrupted while waiting/sleeping, it'll wake up and immediately throw Interrupted exception.
+The thread class exposes the interrupt() method 
+which can be used to interrupt a thread that is blocked in a sleep() or wait() call.
+
+
 ## ***Volatile***
 
