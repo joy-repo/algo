@@ -11,8 +11,9 @@
 ![distributed-logging.png](distributed-logging.png)
 
 
-**Zipkin:** When a request flows through multiple microservices, Zipkin records the journey and visualizes the trace.
-**logstash:** 
+* **Zipkin:** When a request flows through multiple microservices, Zipkin records the journey and visualizes the trace.
+* **logstash:** Agent running in each host to aggregate and push the logs to Elasticsearch.
+* **Kibana:** It is a visualization tool for exploring and analyzing logs, metrics, and traces stored in Elasticsearch.
 
 ## Steps to Configure Distributed Logging
 
