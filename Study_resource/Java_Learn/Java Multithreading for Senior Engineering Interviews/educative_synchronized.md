@@ -97,5 +97,100 @@ The thread class exposes the interrupt() method
 which can be used to interrupt a thread that is blocked in a sleep() or wait() call.
 
 
-## ***Volatile***
+### How Thread.interrupt() Works
+1. It sets the interrupt flag (Thread.interrupted() → true).
+2. If the thread is sleeping, waiting, or blocked, it will be interrupted and throw an InterruptedException.
+3. If the thread is not in a blocking state, it must manually check and handle the interrupt flag.
+
+**Example: Interrupting a Sleeping Thread**
+
+```java
+
+class MyThread extends Thread {
+    public void run() {
+        try {
+            System.out.println("Thread is sleeping...");
+            Thread.sleep(5000); // Sleeping for 5 seconds
+        } catch (InterruptedException e) {
+            System.out.println("Thread was interrupted while sleeping!");
+        }
+    }
+}
+
+public class InterruptExample {
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+        thread.start();
+        
+        try {
+            Thread.sleep(2000); // Main thread waits for 2 seconds
+            thread.interrupt(); // Interrupts MyThread
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+//TODO: OUTPUT:
+//Thread is sleeping...
+//Thread was interrupted while sleeping!
+```
+
+
+***Example: Interrupting a Running Thread (Manual Check)***
+
+```java
+class MyThread extends Thread {
+    public void run() {
+        while (true) {
+            if (Thread.interrupted()) { // Check if interrupted
+                System.out.println("Thread was interrupted! Exiting...");
+                break;
+            }
+            System.out.println("Thread is running...");
+        }
+    }
+}
+
+public class InterruptExample {
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+        thread.start();
+        
+        try {
+            Thread.sleep(2000); // Let thread run for 2 seconds
+            thread.interrupt(); // Request interruption
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+/*
+Thread is running...
+Thread is running...
+Thread was interrupted! Exiting...
+ */
+```
+
+## What Happens If an Already Interrupted Thread Calls sleep()?
+
+If a thread is already interrupted and then calls Thread.sleep(), 
+**it will immediately throw InterruptedException without sleeping.**
+
+## Thread.interrupted() vs Thread.currentThread().isInterrupted()
+
+**Thread.interrupted() (Static Method):**
+
+* Checks and Clears the interrupt flag of the current thread.
+* If the thread was interrupted, it returns true and clears the flag.
+* If called again, it will return false (unless interrupted again).
+
+**Thread.currentThread().isInterrupted() (Instance Method)**
+
+* Only checks if the current thread is interrupted but does NOT clear the flag.
+* Can be called multiple times and will keep returning true until the flag is cleared manually.
+
+
+
 
