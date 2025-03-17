@@ -3,13 +3,13 @@
 
 
 # Easy
-* Design URL Shortener like TinyURL
-* Design Text Storage Service like Pastebin 
-* Design Leaderboard
-* Design Content Delivery Network (CDN)
-* Design Parking Garage
+* Design URL Shortener like TinyURL -> https://www.youtube.com/watch?v=iUU4O1sWtJA
+* Design Text Storage Service like Pastebin  -> 
+* Design Leaderboard -> https://www.youtube.com/watch?v=1lfktgZ9Eeo&t=898s&pp=ygUbaGVsbG9pbnRlcnZpZXcgbGVhZGV3ckJvYXJk
+* Design Content Delivery Network (CDN) -> 
+* Design Parking Garage ->
 * Design Vending Machine
-* Design Distributed Key-Value Store
+* Design Distributed Key-Value Store -> 
 * Design Distributed Cache
 * Design Authentication System
 * Design Unified Payments Interface (UPI)
@@ -51,7 +51,7 @@
 * Design Zoom : 
 
 * Design Distributed Counter
-* Design File Sharing System like Dropbox
+* Design File Sharing System like Dropbox -> https://www.youtube.com/watch?v=_UZ1ngy-kOI&pp=ygUWaGVsbG9pbnRlcnZpZXcgZHJvcGJveA%3D%3D
 * Design Ticket Booking System like BookMyShow
 * Design Distributed Web Crawler
 * Design Code Deployment System
