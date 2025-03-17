@@ -48,7 +48,10 @@
 * Design Food Delivery App like Doordash
 * Design Google Docs
 * Design Google Maps
-* Design Zoom : 
+* Design Zoom :  
+  * TCP/UDP/NAT : https://www.youtube.com/watch?v=7KO7o55dcuw&t=190s
+  * 
+
 
 * Design Distributed Counter
 * Design File Sharing System like Dropbox -> https://www.youtube.com/watch?v=_UZ1ngy-kOI&pp=ygUWaGVsbG9pbnRlcnZpZXcgZHJvcGJveA%3D%3D
