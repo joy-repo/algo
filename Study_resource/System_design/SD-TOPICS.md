@@ -49,8 +49,9 @@
 * Design Google Docs
 * Design Google Maps
 * Design Zoom :  
-  * TCP/UDP/NAT : https://www.youtube.com/watch?v=7KO7o55dcuw&t=190s
-  * 
+    *   TCP/UDP/NAT : https://www.youtube.com/watch?v=7KO7o55dcuw&t=190s
+    * [zoom.md](SD-Topics/zoom.md)
+      
 
 
 * Design Distributed Counter
