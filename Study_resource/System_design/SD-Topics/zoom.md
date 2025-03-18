@@ -180,3 +180,7 @@ Coturn can be used to setup the STUN/TURN.
 * STUN helps clients discover their public IP for direct connections.
 * TURN relays media when direct connections fail (Symmetric NAT, strict firewalls).
 * Coturn is a powerful open-source STUN/TURN server.
+
+
+![zoom.png](zoom.png)
+

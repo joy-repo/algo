@@ -3,9 +3,6 @@ package atlassian;
 import java.util.*;
 
 
-
-
-
 class AllInOneDS {
     private Map<String, Integer> valueCount;   // Stores frequency of elements
     private TreeMap<Integer, LinkedHashSet<String>> freqMap; // Frequency -> Set of elements

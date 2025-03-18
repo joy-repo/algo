@@ -1,5 +1,17 @@
 
 
+## Payment System
+## Stock exchange
+## Stock Broker
+## Whatsapp
+## leaderBoard
+## TinyURL
+## Ticket Master
+## Map
+## Near_by/Yelp
+## Web Crawler
+## Design Live Comments
+## Design Spotify
 
 
 # Easy
