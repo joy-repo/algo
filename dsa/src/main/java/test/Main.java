@@ -9,6 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+
         ProductCreationTimeDetails pd = new ProductCreationTimeDetails("a1", 677688l);
         List<ProductCreationTimeDetails> list = new ArrayList<>();
         list.add(new ProductCreationTimeDetails("a1", 123l));
