@@ -2,12 +2,12 @@
 
 ## Payment System
 ## Stock exchange -- done [stock_exchange.excalidraw](SD-Topics/stock_exchange.excalidraw)
-## Stock Broker
+## Stock Broker -- 
 ## Whatsapp
 ## leaderBoard
 ## TinyURL
 ## Ticket Master
-## google Map
+## google Map * 
 ## Near_by/Yelp
 ## Web Crawler
 ## Design Live Comments
