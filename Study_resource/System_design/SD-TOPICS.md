@@ -1,17 +1,17 @@
 
 
 ## Payment System
-## Stock exchange
+## Stock exchange -- done [stock_exchange.excalidraw](SD-Topics/stock_exchange.excalidraw)
 ## Stock Broker
 ## Whatsapp
 ## leaderBoard
 ## TinyURL
 ## Ticket Master
-## Map
+## google Map
 ## Near_by/Yelp
 ## Web Crawler
 ## Design Live Comments
-## Design Spotify
+## Design Spotify/youtube
 
 
 # Easy
