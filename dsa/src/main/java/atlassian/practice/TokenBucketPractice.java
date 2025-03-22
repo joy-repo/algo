@@ -39,9 +39,7 @@ public class TokenBucketPractice {
     }
 
     private  void refillTokens() {
-       // userTokensMap.merge(userId, maxBucketSize, (oldTokens, max) -> Math.max(oldTokens, max))
 
-        //System.out.println("refillTokens - Time: "+ LocalDateTime.now().format(formatter));
         for(String userId : userTokensMap.keySet()){
             userTokensMap.merge(userId, maxBucketSize, (oldTokens, max) -> maxBucketSize);
             //userTokensMap.put(userId, maxBucketSize);
