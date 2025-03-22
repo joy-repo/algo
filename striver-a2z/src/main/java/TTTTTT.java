@@ -8,6 +8,7 @@ public class TTTTTT {
     public static String compressedString(String message) {
 
         String res = "";
+
         if(message.length()==0) return res;
 
         int i=0;

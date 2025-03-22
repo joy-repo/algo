@@ -24,7 +24,7 @@ public class TopKElements_CountSort {
     @ToString
     static class Bucket{
         public List<Integer> data;
-        public int freq;
+      //  public int freq;
     }
 
     private static void topkCSort() {
@@ -38,7 +38,7 @@ public class TopKElements_CountSort {
             if(freqArr[e.getValue()]==null){
                 List<Integer> list = new ArrayList<>();
                 list.add(e.getKey());
-                freqArr[e.getValue()]=new Bucket(list,1);
+                freqArr[e.getValue()]=new Bucket(list);
             } else {
                 Bucket b = freqArr[e.getValue()];
                 b.data.add(e.getKey());
