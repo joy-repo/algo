@@ -1,7 +1,5 @@
 package atlassian.rate_limiter;
 
-
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,13 +14,15 @@ interface RateLimiterSW {
 class SlidingWindow {
     private final long windowSizeInMillis;
     private final ConcurrentHashMap<Long, AtomicInteger> requestCounts;
+    private final int maxRequests;
 
-    public SlidingWindow(long windowSizeInMillis) {
+    public SlidingWindow(long windowSizeInMillis, int maxRequests) {
         this.windowSizeInMillis = windowSizeInMillis;
         this.requestCounts = new ConcurrentHashMap<>();
+        this.maxRequests=maxRequests;
     }
 
-    public synchronized boolean allowRequest(int maxRequests) {
+    public synchronized boolean allowRequest() {
         long currentTime = System.currentTimeMillis();
         long windowStart = currentTime - windowSizeInMillis;
 
@@ -47,25 +47,25 @@ class SlidingWindow {
 }
 
 // Step 3: Encapsulated User-Specific Sliding Window Tracker
-class UserSlidingWindow {
-    private final int maxRequests;
-    private final SlidingWindow slidingWindow;
-
-    public UserSlidingWindow(int maxRequests, long windowSizeInMillis) {
-        this.maxRequests = maxRequests;
-        this.slidingWindow = new SlidingWindow(windowSizeInMillis);
-    }
-
-    public boolean allowRequest() {
-        return slidingWindow.allowRequest(maxRequests);
-    }
-}
+//class UserSlidingWindow {
+//    private final int maxRequests;
+//    private final SlidingWindow slidingWindow;
+//
+//    public UserSlidingWindow(int maxRequests, long windowSizeInMillis) {
+//        this.maxRequests = maxRequests;
+//        this.slidingWindow = new SlidingWindow(windowSizeInMillis);
+//    }
+//
+//    public boolean allowRequest() {
+//        return slidingWindow.allowRequest(maxRequests);
+//    }
+//}
 
 // Step 4: Sliding Window Rate Limiter for Multiple Users
 public class SlidingWindowRateLimiterOOD implements RateLimiterSW {
     private final int maxRequests;
     private final long windowSizeInMillis;
-    private final ConcurrentHashMap<String, UserSlidingWindow> userWindows;
+    private final ConcurrentHashMap<String, SlidingWindow> userWindows;
 
     public SlidingWindowRateLimiterOOD(int maxRequests, int windowSizeInSeconds) {
         this.maxRequests = maxRequests;
@@ -75,7 +75,7 @@ public class SlidingWindowRateLimiterOOD implements RateLimiterSW {
 
     @Override
     public boolean allowRequest(String userId) {
-        userWindows.computeIfAbsent(userId, key -> new UserSlidingWindow(maxRequests, windowSizeInMillis));
+        userWindows.computeIfAbsent(userId, key -> new SlidingWindow(windowSizeInMillis, maxRequests));
         return userWindows.get(userId).allowRequest();
     }
 
