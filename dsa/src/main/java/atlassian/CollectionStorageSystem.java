@@ -20,7 +20,8 @@ package atlassian;
 
 
 
-Imagine we have a system that stores files, and these files can be grouped into collections. We are interested in knowing where our resources are being taken up.
+Imagine we have a system that stores files, and these files can be grouped into collections.
+We are interested in knowing where our resources are being taken up.
 For this system we would like to generate a report that lists:
 - The total size of all files stored;
 - The top N collections (by file size) where N can be a user-defined value

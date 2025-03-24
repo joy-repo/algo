@@ -1,8 +1,11 @@
 package atlassian;
 
+import lombok.ToString;
+
 import java.util.*;
 
 class ContentPopularity_DLL {
+    @ToString
     private class Node {
         int contentId;
         int popularityScore;
@@ -15,7 +18,7 @@ class ContentPopularity_DLL {
     }
 
     private Map<Integer, Node> contentMap; // Maps contentId → Node
-    private Map<Integer, LinkedHashSet<Integer>> bucketMap; // Maps popularity → Set of contentIds
+    private Map<Integer, LinkedHashSet<Node>> bucketMap; // Maps popularity → Set of contentIds
     // LinkedHashSet instead of Set to maintain the order of the contentIds for each bucket.
     //Discuss if it is really needed as tie-breaker or something else.
     private int maxPopularity; // Keeps track of highest popularity
@@ -34,9 +37,9 @@ class ContentPopularity_DLL {
         updatePopularity(contentId, -1);
     }
 
-    public int mostPopular() {
-        if (bucketMap.isEmpty()) return -1;
-        return bucketMap.get(maxPopularity).iterator().next(); // O(1) retrieval
+    public List<Node> mostPopular() {
+        if (bucketMap.isEmpty()) return Collections.emptyList();
+        return new ArrayList<>(bucketMap.get(maxPopularity)); // O(1) retrieval
     }
 
     private void updatePopularity(int contentId, int delta) {
@@ -45,7 +48,7 @@ class ContentPopularity_DLL {
 
         // Remove contentId from old score bucket
         if (oldScore != 0) {
-            bucketMap.get(oldScore).remove(contentId);
+            bucketMap.get(oldScore).remove(bucketMap.get(contentId));
             if (bucketMap.get(oldScore).isEmpty()) {
                 bucketMap.remove(oldScore);
                 if (oldScore == maxPopularity) maxPopularity = newScore; // Adjust max score if needed
@@ -56,7 +59,7 @@ class ContentPopularity_DLL {
         contentMap.put(contentId, new Node(contentId, newScore));
 
         // Add to new score bucket
-        bucketMap.computeIfAbsent(newScore, k -> new LinkedHashSet<>()).add(contentId);
+        bucketMap.computeIfAbsent(newScore, k -> new LinkedHashSet<>()).add(contentMap.get(contentId));
         maxPopularity = Math.max(maxPopularity, newScore);
     }
 
@@ -66,6 +69,10 @@ class ContentPopularity_DLL {
         tracker.increasePopularity(2);
         tracker.increasePopularity(1);
         tracker.decreasePopularity(2);
+        tracker.increasePopularity(3);
+        tracker.increasePopularity(3);
+      //  tracker.increasePopularity(3);
+       // tracker.increasePopularity(3);
         System.out.println(tracker.mostPopular()); // Should print 1
     }
 }
