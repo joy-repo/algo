@@ -5,9 +5,9 @@ import java.util.Map;
 
 
 
-public class LongestSubStringWithKDistionctChars {
+public class LongestSubStringWithAtmostKRepeatingChars {
 
-    static  String STR = "eceba";
+    static  String STR = "ecebabb";
     static int k = 2;   // O/P -> "ece" 
     public static void main(String[] args) {
         solveLeet340();
