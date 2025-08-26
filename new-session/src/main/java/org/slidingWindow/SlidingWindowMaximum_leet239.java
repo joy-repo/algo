@@ -5,7 +5,9 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SlidingWindowMaximum {
+
+
+public class SlidingWindowMaximum_leet239 {
 
     static int[] nums = {1,3,-1,-3,5,3,6,7};
     static int k = 3;
