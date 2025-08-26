@@ -15,6 +15,7 @@
         <module>striver-a2z</module>
         <module>sd-prgms</module>
         <module>graph</module>
+        <module>new-session</module>
     </modules>
 
 
