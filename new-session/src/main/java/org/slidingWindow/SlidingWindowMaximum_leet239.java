@@ -26,7 +26,7 @@ public class SlidingWindowMaximum {
         res.add(nums[dq.getFirst()]);
         for(int i=k; i<nums.length; i++){
 
-            while(!dq.isEmpty() && dq.getFirst()>i-k+1){
+            while(!dq.isEmpty() && dq.getFirst()<i-k+1){
                 dq.removeFirst();
             }
 
