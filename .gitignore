@@ -39,3 +39,4 @@ nb-configuration.xml
 **/deps
 .DS_Store
 
+/.vscode/settings.json
