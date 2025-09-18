@@ -1,5 +1,9 @@
 
 
+refer: https://youtu.be/S7E-GhQLNnM?si=un3r2_kx2J-JfKMP
+
+
+
 We can use SQL to store the Latitude and longitude in separate columns and index those
 
 Any Search in the 2 columns will have o(n^2)
