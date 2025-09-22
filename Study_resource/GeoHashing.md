@@ -6,6 +6,7 @@
 
 We can use SQL to store latitude and longitude in separate columns and index them. However, searching in two columns can have a time complexity of \(O(n^2)\). To optimize this, we can use various techniques to map 2D space into a more efficient structure.
 
+![img.png](img.png)
 ### Common Approaches
 
 1. **Google S2**: Maps the globe to a cube and recursively divides it into smaller cells. Each location is assigned a unique `cellID`.
@@ -15,7 +16,7 @@ We can use SQL to store latitude and longitude in separate columns and index the
 ### GeoHashing
 
 GeoHashing is a scalable and less complex way to store and search spatial data by converting 2D space into a string representation. It divides the 2D space into quadrants recursively and maps them to a string.
-
+![image-1.png](image-1.png)
 ---
 
 ## Step-by-Step Example
