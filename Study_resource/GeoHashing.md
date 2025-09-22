@@ -162,3 +162,11 @@ flowchart TD
 
 This issue is inherent to the grid-based nature of GeoHashing.
 **Reference**: [YouTube Video](https://youtu.be/S7E-GhQLNnM?si=un3r2_kx2J-JfKMP)
+
+
+java:
+<dependency>
+    <groupId>ch.hsr</groupId>
+    <artifactId>geohash</artifactId>
+    <version>1.4.0</version>
+</dependency>
