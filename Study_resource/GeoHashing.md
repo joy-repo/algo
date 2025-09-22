@@ -156,7 +156,7 @@ flowchart TD
 4. **Encode Neighboring Ranges**:
    - Convert the adjusted latitude and longitude ranges back into GeoHash strings.
 
-## Output
+5. **Output**
 - A list of GeoHash strings representing the neighboring cells.
 
 This issue is inherent to the grid-based nature of GeoHashing.
